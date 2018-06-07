@@ -7,7 +7,7 @@ Window3D::Window3D(QScreen *parent)
 {
 	InitializeWindow3D();
 
-	this->setRootEntity(m_sceneRoot); // Starts the Qt3D engine.
+	//this->setRootEntity(m_sceneRoot); // Starts the Qt3D engine.- moved to Game
 
 	qWarning("Window 3D : Created");
 }
@@ -35,9 +35,9 @@ void Window3D::InitializeWindow3D()
 {
 	m_cameraEntity = this->camera();
 	m_cameraEntity->lens()->setPerspectiveProjection(44.0f, 4.0f / 3.0f, 0.1f, 1000.0f);
-	m_cameraEntity->translate(QVector3D(0.0f, 1.0f, -1.0f));
+	m_cameraEntity->translate(QVector3D(0.0f, 30.0f, 0.0f));
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
-	m_cameraEntity->setViewCenter(QVector3D(0.0f, 1.0f, 1.0f));
+	m_cameraEntity->setViewCenter(QVector3D(15.0f, 0.0f, 15.0f));
 	qWarning("Camera Created");
 
 	// Light ( placed at cameras initial position for 'convenience'

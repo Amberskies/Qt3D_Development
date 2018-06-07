@@ -4,6 +4,7 @@
 #include <QEntity>
 
 #include "src/Rendering/Window3D.h"
+#include "src/Rendering/Graphics.h"
 
 
 
@@ -26,7 +27,7 @@ private:
 	/********************************/
 private:
 	Window3D& m_window3D;
-	//Graphics gfx;
+	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
 	/********************************/
