@@ -7,6 +7,7 @@
 #include <QTransform>
 #include <QForwardRenderer>
 #include <QMouseEvent>
+#include <QKeyEvent>
 
 class Window3D : public Qt3DExtras::Qt3DWindow
 {
@@ -27,6 +28,8 @@ public:
 protected:
 	void mousePressEvent(QMouseEvent *event);
 	void mouseReleaseEvent(QMouseEvent *event);
+	void keyPressEvent(QKeyEvent *event);
+	void keyReleaseEvent(QKeyEvent *event);
 
 private:
 	Qt3DRender::QCamera *cameraEntity;
