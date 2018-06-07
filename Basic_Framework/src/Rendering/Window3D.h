@@ -19,9 +19,12 @@ public:
 	Window3D(QScreen *parent = nullptr);
 	~Window3D();
 	void Update();
+	void InitializeWindow3D();
+
 	// Gets
-	void createPointLight(Qt3DCore::QEntity *root);
 	Qt3DRender::QCamera* getCamera();
+	Qt3DCore::QEntity* getSceneRoot();
+	Qt3DCore::QEntity* getPointLight();
 	// Sets
 	void setBackgroundColor(QColor color);
 
@@ -32,6 +35,7 @@ protected:
 	void keyReleaseEvent(QKeyEvent *event);
 
 private:
+	Qt3DCore::QEntity *m_sceneRoot;
 	Qt3DRender::QCamera *m_cameraEntity;
 	Qt3DCore::QEntity *m_lightEntity;
 	Qt3DRender::QPointLight *m_light;

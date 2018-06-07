@@ -2,6 +2,7 @@
 #include "src/Rendering/Window3D.h"
 #include "src/Game.h"
 
+
 int main(int argc, char *argv[])
 {
 	QGuiApplication a(argc, argv);
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
 	return a.exec();
 }
 
-
+// Notes : 
 /*ToDo
 	main wind/screen :
 		light
@@ -23,7 +24,10 @@ int main(int argc, char *argv[])
 		background color
 		mouse input event capture
 		Key input event capture
-	game(window)
-	game go
+	Game :
+		game(window)
+		game go
+		composeFrame for game logic
+		updateModel for the main game Update
 	
 	*/

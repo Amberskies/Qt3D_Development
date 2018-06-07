@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QEntity>
 
 #include "src/Rendering/Window3D.h"
 
