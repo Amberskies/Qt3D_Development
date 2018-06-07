@@ -19,26 +19,26 @@ void Window3D::Update()
 
 Qt3DRender::QCamera *Window3D::getCamera()
 {
-	cameraEntity = this->camera();
-	cameraEntity->lens()->setPerspectiveProjection(44.0f, 4.0f / 3.0f, 0.1f, 1000.0f);
-	cameraEntity->translate(QVector3D(0.0f, 30.0f, 0.0f));
-	cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
-	cameraEntity->setViewCenter(QVector3D(15.0f, 0.0f, 15.0f));
-	return cameraEntity;
+	m_cameraEntity = this->camera();
+	m_cameraEntity->lens()->setPerspectiveProjection(44.0f, 4.0f / 3.0f, 0.1f, 1000.0f);
+	m_cameraEntity->translate(QVector3D(0.0f, 30.0f, 0.0f));
+	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
+	m_cameraEntity->setViewCenter(QVector3D(15.0f, 0.0f, 15.0f));
+	return m_cameraEntity;
 }
 
 void Window3D::createPointLight(Qt3DCore::QEntity *root)
 {
 	// Light ( placed at cameras initial position for 'convenience'
 	// It can be paced anywhere with setTranslation(QVector3D(x, y, z)
-	lightEntity = new Qt3DCore::QEntity(root);
-	light = new Qt3DRender::QPointLight(lightEntity);
-	light->setColor("white");
-	light->setIntensity(1);
-	lightEntity->addComponent(light);
-	lightTransform = new Qt3DCore::QTransform(lightEntity);
-	lightTransform->setTranslation(cameraEntity->position());
-	lightEntity->addComponent(lightTransform);
+	m_lightEntity = new Qt3DCore::QEntity(root);
+	m_light = new Qt3DRender::QPointLight(m_lightEntity);
+	m_light->setColor("white");
+	m_light->setIntensity(1);
+	m_lightEntity->addComponent(m_light);
+	m_lightTransform = new Qt3DCore::QTransform(m_lightEntity);
+	m_lightTransform->setTranslation(m_cameraEntity->position());
+	m_lightEntity->addComponent(m_lightTransform);
 }
 
 void Window3D::setBackgroundColor(QColor color)

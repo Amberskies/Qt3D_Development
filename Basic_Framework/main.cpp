@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include "src/Rendering/Window3D.h"
+#include "src/Game.h"
 
 int main(int argc, char *argv[])
 {
@@ -7,7 +8,10 @@ int main(int argc, char *argv[])
 
 	Window3D wnd;
 	wnd.setBackgroundColor(Qt::darkBlue);
-	wnd.show();
+
+	Game myGame(wnd);
+	myGame.Go();
+
 	return a.exec();
 }
 
@@ -17,7 +21,8 @@ int main(int argc, char *argv[])
 		light
 		camera
 		background color
-		mouse input controller.
+		mouse input event capture
+		Key input event capture
 	game(window)
 	game go
 	

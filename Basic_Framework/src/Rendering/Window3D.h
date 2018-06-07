@@ -32,8 +32,8 @@ protected:
 	void keyReleaseEvent(QKeyEvent *event);
 
 private:
-	Qt3DRender::QCamera *cameraEntity;
-	Qt3DCore::QEntity *lightEntity;
-	Qt3DRender::QPointLight *light;
-	Qt3DCore::QTransform *lightTransform;
+	Qt3DRender::QCamera *m_cameraEntity;
+	Qt3DCore::QEntity *m_lightEntity;
+	Qt3DRender::QPointLight *m_light;
+	Qt3DCore::QTransform *m_lightTransform;
 };
