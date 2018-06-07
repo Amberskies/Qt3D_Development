@@ -24,16 +24,36 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{c317e140-671d-4b97-8f38-f8b7d3e5b10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{106bf68b-6134-4693-b07e-5dca6b3f4acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{00515469-cfbb-4a71-99fa-b0ff29a4178d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{e7aa529a-c483-4dfc-8555-461e25bfb1d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Window3D.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Core\Input.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Window3D.cpp">
+      <Filter>Source Files\Rendering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="src\Window3D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Core\Input.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\Rendering\Window3D.h">
+      <Filter>Header Files\Rendering</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>
