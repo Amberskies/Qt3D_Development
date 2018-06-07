@@ -53,13 +53,13 @@
     <ClInclude Include="src\Core\Input.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Rendering\Window3D.h">
       <Filter>Header Files\Rendering</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Game.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

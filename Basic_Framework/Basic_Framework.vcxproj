@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h" />
-    <ClInclude Include="src\Game.h" />
+    <QtMoc Include="src\Game.h" />
     <QtMoc Include="src\Rendering\Window3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

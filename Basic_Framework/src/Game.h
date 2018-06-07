@@ -1,10 +1,15 @@
 #pragma once
+
+#include <QObject>
+
 #include "src/Rendering/Window3D.h"
 
 
 
-class Game
+class Game : public QObject
 {
+	Q_OBJECT
+
 public:
 	Game(class Window3D& window3D);
 	Game(const Game&) = delete;
