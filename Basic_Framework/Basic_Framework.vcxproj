@@ -109,6 +109,9 @@
     <QtMoc Include="src\Game.h" />
     <QtMoc Include="src\Rendering\Window3D.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Mesh\Dice.ply" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

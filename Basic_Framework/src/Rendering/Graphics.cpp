@@ -29,7 +29,7 @@ void Graphics::EndFrame()
 void Graphics::test()
 {
 	Qt3DRender::QMesh *testMesh = new Qt3DRender::QMesh();
-	testMesh->setSource(QUrl::fromLocalFile("Assets/Mesh/Dice.obj"));
+	testMesh->setSource(QUrl::fromLocalFile("Assets/Mesh/Dice.ply"));
 	qWarning("test mesh loading");
 	Qt3DExtras::QPhongMaterial *testMaterial = new Qt3DExtras::QPhongMaterial();
 	testMaterial->setDiffuse(QColor(QRgb(0xD4AF37)));

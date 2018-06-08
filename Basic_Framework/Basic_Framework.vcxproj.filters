@@ -36,6 +36,12 @@
     <Filter Include="Header Files\Rendering">
       <UniqueIdentifier>{e7aa529a-c483-4dfc-8555-461e25bfb1d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Assets">
+      <UniqueIdentifier>{eeb83d17-0346-4087-9d75-e14534f370af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assets\Mesh">
+      <UniqueIdentifier>{28a3e677-1fe8-4e0a-9f96-06147cc8643d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -67,5 +73,10 @@
     <QtMoc Include="src\Game.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Mesh\Dice.ply">
+      <Filter>Resource Files\Assets\Mesh</Filter>
+    </None>
   </ItemGroup>
 </Project>
