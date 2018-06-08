@@ -78,13 +78,5 @@
     <None Include="Assets\Mesh\Dice.ply">
       <Filter>Resource Files\Assets\Mesh</Filter>
     </None>
-    <None Include="Assets\Mesh\Creeper.ply">
-      <Filter>Resource Files\Assets\Mesh</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\Mesh\creeper.png">
-      <Filter>Resource Files\Assets\Mesh</Filter>
-    </Image>
   </ItemGroup>
 </Project>

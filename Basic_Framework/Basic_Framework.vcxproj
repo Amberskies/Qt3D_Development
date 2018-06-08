@@ -110,11 +110,7 @@
     <QtMoc Include="src\Rendering\Window3D.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Mesh\Creeper.ply" />
     <None Include="Assets\Mesh\Dice.ply" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\Mesh\creeper.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
