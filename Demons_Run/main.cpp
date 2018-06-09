@@ -16,23 +16,10 @@ int main(int argc, char *argv[])
 	return a.exec();
 }
 
-// Notes : 
+// Notes : Demons Run
 /*
-	main wind/screen :
-		light
-		camera
-		background color
-		mouse input event capture
-		Key input event capture
-	Game :
-		game(window)
-		game go
-		composeFrame for game logic
-		updateModel for the main game Update
+	moved assets up 1 directory level.
+	copied Basic_Framework.
 
-	ToDo *****************************************
-	Player:
-	Map:
-	MovePlayer:
 	
 	*/
