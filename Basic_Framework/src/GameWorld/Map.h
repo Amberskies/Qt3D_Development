@@ -2,13 +2,11 @@
 #define MAP_H
 
 #include <QObject>
-#include <Qt3DCore/qentity.h>
-#include <Qt3DCore/qtransform.h>
-
-#include <Qt3DRender/qmesh.h>
-
-#include <Qt3DExtras/QPhongMaterial>
-#include <Qt3DExtras/qplanemesh.h>
+#include <QEntity>
+#include <QTransform>
+#include <QMesh>
+#include <QPhongMaterial>
+#include <QPlaneMesh>
 
 class Map : public QObject
 {

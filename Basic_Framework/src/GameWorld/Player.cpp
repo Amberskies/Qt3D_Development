@@ -2,7 +2,7 @@
 
 #include <QTransform>
 #include <QMesh>
-#include <QPhongMaterial>
+#include <QPhongMaterial> // texture example is in Graphics.cpp
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :
     m_rootEntity(rootEntity)
@@ -14,7 +14,7 @@ Player::Player(Qt3DCore::QEntity *rootEntity) :
     testMaterial->setDiffuse(QColor(QRgb(0xD4AF37)));
 
     Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-    testTransform->setTranslation(QVector3D(15.0f, 0.5f, 15.0f));
+    testTransform->setTranslation(QVector3D(15.0f, 1.0f, 15.0f));
 
     m_player = new Qt3DCore::QEntity(m_rootEntity);
     m_player->addComponent(testMesh);

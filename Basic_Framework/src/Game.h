@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QTimer>
 
 #include "src/Rendering/Window3D.h"
 #include "src/Rendering/Graphics.h"
@@ -16,6 +17,7 @@ public:
 	Game(class Window3D& window3D);
 	Game(const Game&) = delete;
 	Game& operator=(const Game&) = delete;
+	~Game();
 
 	void Go();
 
@@ -24,11 +26,17 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
+
+private slots:
+	void MainGameLoop();
+	
 	/********************************/
 private:
-	Window3D& m_window3D;
-	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	Window3D & m_window3D;
+	Graphics *m_gfx;
+	QTimer *m_timer;
+
 	/********************************/
 };

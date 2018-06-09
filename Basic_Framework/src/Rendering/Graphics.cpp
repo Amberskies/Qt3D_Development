@@ -1,8 +1,13 @@
 #include "Graphics.h"
 
-#include "src/Rendering/Window3D.h"
+#include "src/Core/Input.h"
 
-Graphics::Graphics()
+
+
+Graphics::Graphics(Window3D & window3D) 
+	: m_wnd(window3D)
+	, m_playerMoving(false)
+	, m_movePlayer(new MovePlayer)
 {
 	qWarning("Graphics Created");
 
@@ -10,8 +15,10 @@ Graphics::Graphics()
 
 Graphics::~Graphics()
 {
-	delete m_entity;
+	delete m_map;
 	delete m_player;
+	delete m_entity;
+
 	//delete m_rootEntity; // gets deleted by parent=Window3D
 
 	qWarning("Graphics Destroyed");
@@ -41,11 +48,12 @@ void Graphics::createMap()
 
 void Graphics::UpdateGraphics()
 {
-	QPoint mousePos = m_window3D.mapFromGlobal(Input::mousePosition());
-	int centerPosx = m_window3D.width() / 2;
-	int centerPosy = m_window3D.height() / 2;
+	QPoint mousePos = m_wnd.mapFromGlobal(Input::mousePosition());
+	int centerPosx = m_wnd.width() / 2;
+	int centerPosy = m_wnd.height() / 2;
 
-	if (m_playerMoving) m_playerMoving = m_movePlayer->updatePlayerMovement(player, cameraEntity);
+	if (m_playerMoving) m_playerMoving = 
+		m_movePlayer->updatePlayerMovement(m_player->getPlayer(), m_wnd.getCamera());
 
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer->setMovePlayer(mousePos, QPoint(centerPosx, centerPosy));

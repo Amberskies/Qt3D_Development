@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
 	Window3D wnd;
 	wnd.setBackgroundColor(Qt::darkBlue);
-	
+	//wnd.show();
 	Game myGame(wnd);
 	myGame.Go();
 

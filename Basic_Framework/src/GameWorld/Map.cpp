@@ -11,7 +11,6 @@ Map::Map(Qt3DCore::QEntity *rootEntity) :
 	qWarning("Map Created");
 }
 
-
 Map::~Map()
 {
     qWarning("Map Shutdown");

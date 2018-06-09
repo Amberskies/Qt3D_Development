@@ -72,14 +72,14 @@
     <ClCompile Include="src\Rendering\Graphics.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="src\Rendering\Player.cpp">
-      <Filter>Source Files\Rendering</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameWorld\Map.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
     <ClCompile Include="src\Physx\MovePlayer.cpp">
       <Filter>Source Files\Physx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Player.cpp">
+      <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,10 +100,10 @@
     <QtMoc Include="src\Game.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="src\Rendering\Player.h">
-      <Filter>Header Files\Rendering</Filter>
-    </QtMoc>
     <QtMoc Include="src\GameWorld\Map.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Player.h">
       <Filter>Header Files\GameWorld</Filter>
     </QtMoc>
   </ItemGroup>
