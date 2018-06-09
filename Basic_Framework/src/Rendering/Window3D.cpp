@@ -5,11 +5,10 @@ Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent),
 	m_sceneRoot(new Qt3DCore::QEntity)
 {
+	//this->setRootEntity(m_sceneRoot); // Starts the Qt3D engine.- moved to Game::Go
+
 	this->show();
 	InitializeWindow3D();
-
-	this->setRootEntity(m_sceneRoot); // Starts the Qt3D engine.- moved to Game
-
 	qWarning("Window 3D : Created");
 }
 

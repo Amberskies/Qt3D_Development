@@ -26,6 +26,8 @@ Game::~Game()
 
 void Game::Go()
 {
+	// setRootEntity starts the Qt3D engine.
+	m_window3D.setRootEntity(m_window3D.getSceneRoot());
 	m_timer->start(10);
 }
 
@@ -33,11 +35,13 @@ void Game::MainGameLoop()
 {
 	m_timer->stop();
 
-	m_gfx->BeginFrame();
-	UpdateModel();
-	ComposeFrame();
-	m_gfx->EndFrame();
-
+	if (m_window3D.isExposed())
+	{
+		m_gfx->BeginFrame();
+		UpdateModel();
+		ComposeFrame();
+		m_gfx->EndFrame();
+	}
 	m_timer->start(10);
 
 }
