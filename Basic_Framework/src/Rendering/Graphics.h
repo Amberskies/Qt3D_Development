@@ -1,6 +1,9 @@
 #pragma once
 
-#include "src/Rendering/Window3D.h"
+#include <QEntity>
+
+#include "src/Rendering/Player.h"
+#include "src/GameWorld/Map.h"
 
 class Graphics
 {
@@ -11,7 +14,12 @@ public:
 	void BeginFrame();
 	void EndFrame();
 
-	void test();
+	void createPlayer();
+	void createMap();
+
+	void UpdateGraphics();
+
+	//void test();
 
 	// Gets
 
@@ -21,4 +29,6 @@ public:
 private:
 	Qt3DCore::QEntity *m_rootEntity = nullptr;
 	Qt3DCore::QEntity *m_entity = nullptr;
+	Player *m_player = nullptr;
+	Map *m_map = nullptr;
 };

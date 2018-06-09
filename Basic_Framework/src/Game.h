@@ -1,10 +1,10 @@
 #pragma once
 
 #include <QObject>
-#include <QEntity>
 
 #include "src/Rendering/Window3D.h"
 #include "src/Rendering/Graphics.h"
+
 
 
 

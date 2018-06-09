@@ -42,6 +42,21 @@
     <Filter Include="Resource Files\Assets\Mesh">
       <UniqueIdentifier>{28a3e677-1fe8-4e0a-9f96-06147cc8643d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Assets\Player">
+      <UniqueIdentifier>{ffdc7a78-e098-409c-9930-ded913f1891b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameWorld">
+      <UniqueIdentifier>{060bffec-9706-4dbd-8768-0a9978a328fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameWorld">
+      <UniqueIdentifier>{b6feedab-bd4e-44bb-96a9-03c825e09974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Physx">
+      <UniqueIdentifier>{506e8709-3921-485f-a2ce-15f37bc6196c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physx">
+      <UniqueIdentifier>{f138966c-1c90-439a-aa4b-099616ec9972}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -57,6 +72,15 @@
     <ClCompile Include="src\Rendering\Graphics.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="src\Rendering\Player.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Map.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physx\MovePlayer.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -64,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="src\Rendering\Graphics.h">
       <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physx\MovePlayer.h">
+      <Filter>Header Files\Physx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +100,12 @@
     <QtMoc Include="src\Game.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\Rendering\Player.h">
+      <Filter>Header Files\Rendering</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Map.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mesh\Dice.ply">
@@ -80,6 +113,9 @@
     </None>
     <None Include="Assets\Mesh\Creeper.ply">
       <Filter>Resource Files\Assets\Mesh</Filter>
+    </None>
+    <None Include="Assets\Player\Player1.ply">
+      <Filter>Resource Files\Assets\Player</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

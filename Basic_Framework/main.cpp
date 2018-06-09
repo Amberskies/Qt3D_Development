@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
 	Window3D wnd;
 	wnd.setBackgroundColor(Qt::darkBlue);
-
+	
 	Game myGame(wnd);
 	myGame.Go();
 
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 }
 
 // Notes : 
-/*ToDo
+/*
 	main wind/screen :
 		light
 		camera
@@ -29,5 +29,10 @@ int main(int argc, char *argv[])
 		game go
 		composeFrame for game logic
 		updateModel for the main game Update
+
+	ToDo *****************************************
+	Player:
+	Map:
+	MovePlayer:
 	
 	*/

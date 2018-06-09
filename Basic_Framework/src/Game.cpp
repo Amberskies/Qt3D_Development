@@ -6,11 +6,11 @@
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
 {
-	m_window3D.show();
 	gfx.SetRoot(m_window3D.getSceneRoot());
-	qWarning("Game Created");
+	
+	m_window3D.show();
 
-	m_window3D.setRootEntity(m_window3D.getSceneRoot());
+	qWarning("Game Created");
 }
 
 
@@ -25,10 +25,14 @@ void Game::Go()
 
 void Game::ComposeFrame()
 {
-	gfx.test();
+	gfx.createPlayer();
+	gfx.createMap();
 }
 
 void Game::UpdateModel()
 {
 	m_window3D.Update(); // Updates user input to the Window
+	gfx.UpdateGraphics();
+
+	
 }
