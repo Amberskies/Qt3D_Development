@@ -15,11 +15,12 @@ public:
     explicit Player(Qt3DCore::QEntity *rootEntity);
     virtual ~Player();
 
+	// getters
     Qt3DCore::QEntity *getPlayer();
+	QVector3D getPlayerPosition();
 
-signals:
-
-public slots:
+	//setters
+	void setPlayerPosition(QVector3D playerPosition);
 };
 
 #endif // PLAYER_H

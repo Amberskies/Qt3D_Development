@@ -34,3 +34,23 @@ Qt3DCore::QEntity *Player::getPlayer()
     return m_player;
 }
 
+QVector3D Player::getPlayerPosition()
+{
+	Qt3DCore::QComponentVector playerVector;
+	Qt3DCore::QTransform *playerTransform;
+	
+	playerVector = m_player->components();
+	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
+	return playerTransform->translation();
+}
+
+void Player::setPlayerPosition(QVector3D playerPosition)
+{
+	Qt3DCore::QComponentVector playerVector;
+	Qt3DCore::QTransform *playerTransform;
+
+	playerVector = m_player->components();
+	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
+	playerTransform->setTranslation(playerPosition);
+}
+
