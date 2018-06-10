@@ -5,6 +5,7 @@
 
 #include "src/Rendering/Window3D.h"
 #include "src/Rendering/Graphics.h"
+#include "src/Physx/Physics.h"
 
 
 
@@ -35,8 +36,9 @@ private:
 	/********************************/
 	/*  User Variables              */
 	Window3D & m_window3D;
-	Graphics *m_gfx;
-	QTimer *m_timer;
+	Graphics *m_gfx = nullptr;
+	QTimer *m_timer = nullptr;
+	Physics *m_physics = nullptr;
 
 	/********************************/
 };

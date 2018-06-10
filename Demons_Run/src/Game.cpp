@@ -3,13 +3,16 @@
 
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
-	, m_gfx(new Graphics(window3D))
+	, m_gfx(new Graphics())
 	, m_timer(new QTimer(this))
+	, m_physics(new Physics(window3D))
 {
-	// Take the root from the main window and give it to the Graphics
+	// Take the root of the main window and give it to the Graphics
 	m_gfx->SetRoot(m_window3D.getSceneRoot());
 	
 	m_gfx->createPlayer();
+	m_physics->setPlayer(m_gfx->GetPlayer());
+
 	m_gfx->createMap();
 
 	// connect the main Game Loop
@@ -19,6 +22,7 @@ Game::Game(Window3D & window3D) :
 
 Game::~Game()
 {
+	delete m_physics;
 	delete m_timer;
 	delete m_gfx;
 	qWarning("Game Destroyed");
@@ -48,12 +52,12 @@ void Game::MainGameLoop()
 
 void Game::ComposeFrame()
 {
-	// Empty
+	m_window3D.Update(); // Updates user input to the Window
+	m_physics->UpdatePhysics(); // Updates all Physical Objects/Entities
 }
 
 void Game::UpdateModel()
 {
-	m_window3D.Update(); // Updates user input to the Window
 	m_gfx->UpdateGraphics();
 
 	

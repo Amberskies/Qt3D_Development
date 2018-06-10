@@ -39,4 +39,14 @@ Qt3DCore::QEntity *Map::createTile(float x, float y)
     return tile;
 }
 
+const int Map::GetMapSizeX()
+{
+	return m_mapSizeX;
+}
+
+const int Map::GetMapSizeY()
+{
+	return m_mapSizeY;
+}
+
 

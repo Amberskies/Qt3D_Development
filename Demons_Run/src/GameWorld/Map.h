@@ -11,16 +11,24 @@
 class Map : public QObject
 {
     Q_OBJECT
-    Qt3DCore::QEntity *m_rootEntity;
-    Qt3DCore::QEntity *m_map[30][30];
+
 public:
     explicit Map(Qt3DCore::QEntity *rootEntity);
     virtual ~Map();
     Qt3DCore::QEntity *createTile(float x, float y);
 
-signals:
+	// setters
 
-public slots:
+	//getters
+	const static int GetMapSizeX();
+	const static int GetMapSizeY();
+
+private:
+	const static int m_mapSizeX = 30;
+	const static int m_mapSizeY = 30;
+	Qt3DCore::QEntity *m_rootEntity;
+	Qt3DCore::QEntity *m_map[m_mapSizeX][m_mapSizeY];
+
 };
 
 #endif // MAP_H

@@ -21,5 +21,9 @@ int main(int argc, char *argv[])
 	moved assets up 1 directory level.
 	copied Basic_Framework.
 
+	ToDo:
+		stop the player from going outside the grid
+
+		create a model loader for each component mesh,material etc
 	
 	*/
