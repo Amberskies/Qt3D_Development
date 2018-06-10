@@ -25,5 +25,9 @@ int main(int argc, char *argv[])
 		stop the player from going outside the grid
 
 		create a model loader for each component mesh,material etc
+	ModelLoader:
+		LoadMesh - done
+		Material - basics done
+		applied to Player and map - much faster Startup - YAY!
 	
 	*/

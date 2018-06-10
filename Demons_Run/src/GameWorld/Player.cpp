@@ -3,15 +3,13 @@
 #include <QTransform>
 #include <QMesh>
 #include <QPhongMaterial> // texture example is in Graphics.cpp
+#include "src/Core/ModelLoader.h"
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :
     m_rootEntity(rootEntity)
 {
-    Qt3DRender::QMesh *testMesh = new Qt3DRender::QMesh();
-    testMesh->setSource(QUrl::fromLocalFile("../Assets/Player/Player1.ply"));
-
-    Qt3DExtras::QPhongMaterial *testMaterial = new Qt3DExtras::QPhongMaterial();
-    testMaterial->setDiffuse(QColor(QRgb(0xD4AF37)));
+    Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Player/Player1.ply");
+	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xD4AF37)));
 
     Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
     testTransform->setTranslation(QVector3D(15.0f, 1.0f, 15.0f));

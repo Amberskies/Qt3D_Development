@@ -6,7 +6,7 @@
 #include <QTransform>
 #include <QMesh>
 #include <QPhongMaterial>
-#include <QPlaneMesh>
+
 
 class Map : public QObject
 {
@@ -15,7 +15,6 @@ class Map : public QObject
 public:
     explicit Map(Qt3DCore::QEntity *rootEntity);
     virtual ~Map();
-    Qt3DCore::QEntity *createTile(float x, float y);
 
 	// setters
 
