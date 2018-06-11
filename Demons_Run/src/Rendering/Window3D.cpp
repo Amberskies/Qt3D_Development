@@ -39,7 +39,7 @@ void Window3D::InitializeWindow3D()
 		this->width() / (float) this->height(), 0.1f, 1000.0f);
 
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
-	m_cameraEntity->translate(QVector3D(0.0f, 30.0f, 0.0f));
+	m_cameraEntity->translate(QVector3D(0.0f, 20.0f, 0.0f));
 	m_cameraEntity->setViewCenter(QVector3D(15.0f, 0.5f, 15.0f));
 
 	qWarning("Camera Created");

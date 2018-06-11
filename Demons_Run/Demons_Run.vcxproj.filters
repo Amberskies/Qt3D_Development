@@ -124,12 +124,6 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Assets\Mesh\Creeper.ply">
-      <Filter>Assets\Mesh</Filter>
-    </None>
-    <None Include="..\Assets\Mesh\Dice.ply">
-      <Filter>Assets\Mesh</Filter>
-    </None>
     <None Include="..\Assets\Player\Attributes.default">
       <Filter>Assets\Player</Filter>
     </None>
@@ -138,8 +132,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Assets\Mesh\creeper.png">
-      <Filter>Assets\Mesh</Filter>
+    <Image Include="..\Assets\Maps\grass.png">
+      <Filter>Assets\Maps</Filter>
     </Image>
   </ItemGroup>
 </Project>

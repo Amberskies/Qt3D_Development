@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 	ModelLoader:
 		LoadMesh - done
 		Material - basics done
+		Texture - basics done
 		applied to Player and map - much faster Startup - YAY!
 	
 	*/

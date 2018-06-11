@@ -1,11 +1,12 @@
 #include "Map.h"
 #include "src/Core/ModelLoader.h"
+#include <QTextureMaterial>
 
 Map::Map(Qt3DCore::QEntity *rootEntity) :
     m_rootEntity(rootEntity)
 {
-	Qt3DRender::QMesh *planeMesh = ModelLoader::LoadMesh("../Assets/Player/Player1.ply");
-	Qt3DExtras::QPhongMaterial *planeMaterial = ModelLoader::Material(QColor(QRgb(0x105510)));
+	Qt3DRender::QMesh *planeMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile.obj");
+	Qt3DExtras::QTextureMaterial *planeMaterial = ModelLoader::Texture("../Assets/Maps/grass.png");
 
 
     for(float x = 0.0f; x < 30.0f; x++)
