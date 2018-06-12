@@ -3,6 +3,7 @@
 #include <QEntity>
 
 #include "src/GameWorld/Player.h"
+#include "src/GameWorld/Enemy.h"
 #include "src/GameWorld/Map.h"
 
 
@@ -17,6 +18,7 @@ public:
 	void EndFrame();
 
 	void createPlayer();
+	void createEnemy();
 	void createMap();
 
 	void UpdateGraphics();
@@ -25,13 +27,13 @@ public:
 
 	// Gets
 	Player* GetPlayer();
+	Enemy* GetEnemy();
 	// Sets
 	void SetRoot(Qt3DCore::QEntity *rootEntity);
 
 private:
 	Qt3DCore::QEntity *m_rootEntity = nullptr;
-	Qt3DCore::QEntity *m_entity = nullptr;
 	Map *m_map = nullptr;
 	Player *m_player = nullptr;
-
+	Enemy *m_enemy = nullptr;
 };

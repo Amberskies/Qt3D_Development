@@ -3,18 +3,17 @@
 
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
-	, m_gfx(new Graphics())
 	, m_timer(new QTimer(this))
-	, m_physics(new Physics(window3D))
+	, m_physics(new Physics(window3D, m_gfx))
 {
 	// Take the root of the main window and give it to the Graphics
-	m_gfx->SetRoot(m_window3D.getSceneRoot());
+	m_gfx.SetRoot(m_window3D.getSceneRoot());
 	
-	m_gfx->createPlayer();
-	m_physics->setPlayer(m_gfx->GetPlayer());
+	m_gfx.createPlayer();
+	m_gfx.createEnemy();
+	m_gfx.createMap();
 
-	m_gfx->createMap();
-
+	m_physics->InitializePhysics();
 	// connect the main Game Loop
 	connect(m_timer, SIGNAL(timeout()), this, SLOT(MainGameLoop()));
 	qWarning("Game Created");
@@ -24,7 +23,6 @@ Game::~Game()
 {
 	delete m_physics;
 	delete m_timer;
-	delete m_gfx;
 	qWarning("Game Destroyed");
 }
 
@@ -41,10 +39,10 @@ void Game::MainGameLoop()
 
 	if (m_window3D.isExposed())
 	{
-		m_gfx->BeginFrame();
+		m_gfx.BeginFrame();
 		UpdateModel();
 		ComposeFrame();
-		m_gfx->EndFrame();
+		m_gfx.EndFrame();
 	}
 	m_timer->start(10);
 
@@ -58,7 +56,7 @@ void Game::ComposeFrame()
 
 void Game::UpdateModel()
 {
-	m_gfx->UpdateGraphics();
+	m_gfx.UpdateGraphics();
 
 	
 }

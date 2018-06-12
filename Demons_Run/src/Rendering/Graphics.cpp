@@ -10,8 +10,8 @@ Graphics::Graphics()
 Graphics::~Graphics()
 {
 	delete m_map;
+	delete m_enemy;
 	delete m_player;
-	delete m_entity;
 
 	//delete m_rootEntity; // gets deleted by parent=Window3D
 
@@ -35,6 +35,11 @@ void Graphics::createPlayer()
 	m_player = new Player(m_rootEntity);
 }
 
+void Graphics::createEnemy()
+{
+	m_enemy = new Enemy(m_rootEntity);
+}
+
 void Graphics::createMap()
 {
 	m_map = new Map(m_rootEntity);
@@ -48,6 +53,11 @@ void Graphics::UpdateGraphics()
 Player * Graphics::GetPlayer()
 {
 	return m_player;
+}
+
+Enemy * Graphics::GetEnemy()
+{
+	return m_enemy;
 }
 
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)

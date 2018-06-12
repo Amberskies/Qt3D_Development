@@ -1,5 +1,5 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
 #include <QObject>
 #include <QEntity>
@@ -12,8 +12,9 @@ class Enemy : public QObject
     Qt3DCore::QEntity *m_rootEntity;
     Qt3DCore::QEntity *m_Enemy;
 public:
-    explicit Enemy(Qt3DCore::QEntity *rootEntity);
-    virtual ~Enemy();
+	
+    Enemy(Qt3DCore::QEntity *rootEntity);
+    ~Enemy();
 
 	// getters
     Qt3DCore::QEntity *getEnemy();
@@ -21,6 +22,10 @@ public:
 
 	//setters
 	void setEnemyPosition(QVector3D playerPosition);
+	void setDead(bool isdead);
+
+private:
+	bool isAlive = true;
 };
 
-#endif // PLAYER_H
+#endif // ENEMY_H

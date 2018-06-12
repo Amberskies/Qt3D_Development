@@ -12,7 +12,7 @@ Enemy::Enemy(Qt3DCore::QEntity *rootEntity) :
 	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xF40000)));
 
     Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-    testTransform->setTranslation(QVector3D(0.0f, 1.0f, 0.0f));
+    testTransform->setTranslation(QVector3D(24.0f, 1.0f, 20.0f));
 
     m_Enemy = new Qt3DCore::QEntity(m_rootEntity);
     m_Enemy->addComponent(testMesh);
@@ -50,5 +50,10 @@ void Enemy::setEnemyPosition(QVector3D EnemyPosition)
 	EnemyVector = m_Enemy->components();
 	EnemyTransform = qobject_cast<Qt3DCore::QTransform *>(EnemyVector.at(2));
 	EnemyTransform->setTranslation(EnemyPosition);
+}
+
+void Enemy::setDead(bool isdead)
+{
+	m_Enemy->setEnabled(!isdead);
 }
 
