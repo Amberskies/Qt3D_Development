@@ -2,7 +2,7 @@
 
 #include <QTransform>
 #include <QMesh>
-#include <QPhongMaterial> // texture example is in Graphics.cpp
+#include <QPhongMaterial> 
 #include "src/Core/ModelLoader.h"
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :

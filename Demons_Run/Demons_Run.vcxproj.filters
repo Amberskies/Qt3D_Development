@@ -91,6 +91,9 @@
     <ClCompile Include="src\Core\ModelLoader.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameWorld\Enemy.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files\GameWorld</Filter>
     </QtMoc>
     <QtMoc Include="src\GameWorld\Player.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Enemy.h">
       <Filter>Header Files\GameWorld</Filter>
     </QtMoc>
   </ItemGroup>

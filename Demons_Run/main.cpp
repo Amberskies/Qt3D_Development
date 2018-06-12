@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
 
 	ToDo:
 		stop the player from going outside the grid
+		hmmm....I think we're better going for collision detection.
+		that makes invisible walls much easier.
 
 		create a model loader for each component mesh,material etc
 	ModelLoader:
@@ -30,5 +32,8 @@ int main(int argc, char *argv[])
 		Material - basics done
 		Texture - basics done
 		applied to Player and map - much faster Startup - YAY!
+
+	Enemy:
+		Copied Player to create an Enemy class.
 	
 	*/

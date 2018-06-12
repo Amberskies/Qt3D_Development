@@ -103,6 +103,7 @@
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\ModelLoader.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameWorld\Enemy.cpp" />
     <ClCompile Include="src\GameWorld\Map.cpp" />
     <ClCompile Include="src\GameWorld\Player.cpp" />
     <ClCompile Include="src\Physx\MovePlayer.cpp" />
@@ -121,6 +122,10 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
     </QtMoc>
     <ClInclude Include="src\Core\ModelLoader.h" />
+    <QtMoc Include="src\GameWorld\Enemy.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering;.\src\Physx</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering;.\src\Physx</IncludePath>
+    </QtMoc>
     <ClInclude Include="src\Physx\MovePlayer.h" />
     <ClInclude Include="src\Physx\Physics.h" />
     <ClInclude Include="src\Rendering\Graphics.h" />
