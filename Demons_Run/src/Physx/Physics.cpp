@@ -18,7 +18,10 @@ Physics::~Physics()
 void Physics::InitializePhysics()
 {
 	m_player1 = m_graphics.GetPlayer();
-	m_enemy1 = m_graphics.GetEnemy();
+	m_enemy0 = m_graphics.GetEnemy0();
+	m_enemy1 = m_graphics.GetEnemy1();
+	m_enemy2 = m_graphics.GetEnemy2();
+
 }
 
 void Physics::UpdatePhysics()
@@ -34,14 +37,43 @@ void Physics::UpdatePhysics()
 		m_playerMoving = m_movePlayer.setMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
 
 	QVector3D p1 = m_player1->getPlayerPosition();
+	QVector3D e0 = m_enemy0->getEnemyPosition();
 	QVector3D e1 = m_enemy1->getEnemyPosition();
-
-	if ( (p1.x() < e1.x() + 0.4f) &&
-		 (p1.x() > e1.x() - 0.4f) &&
-		 (p1.z() < e1.z() + 0.4f) &&
-		 (p1.z() > e1.z() - 0.4f) )
+	QVector3D e2 = m_enemy2->getEnemyPosition();
+	
+	bool collided = false;
+	collided = CollisionTest(p1, e0);
+	if (collided)
+	{
+		m_enemy0->setDead(true);
+	}
+	
+	collided = false;
+	collided = CollisionTest(p1, e1);
+	if (collided)
 	{
 		m_enemy1->setDead(true);
 	}
+	
+	collided = false;
+	collided = CollisionTest(p1, e2);
+	if (collided)
+	{
+		m_enemy2->setDead(true);
+	}
+
+}
+
+bool Physics::CollisionTest(QVector3D p1, QVector3D e1)
+{
+	bool collision = false;
+	if ((p1.x() < e1.x() + 0.4f) &&
+		(p1.x() > e1.x() - 0.4f) &&
+		(p1.z() < e1.z() + 0.4f) &&
+		(p1.z() > e1.z() - 0.4f))
+	{
+		collision = true;
+	}
+	return collision;
 }
 

@@ -27,7 +27,9 @@ public:
 
 	// Gets
 	Player* GetPlayer();
-	Enemy* GetEnemy();
+	Enemy* GetEnemy0();
+	Enemy* GetEnemy1();
+	Enemy* GetEnemy2();
 	// Sets
 	void SetRoot(Qt3DCore::QEntity *rootEntity);
 
@@ -35,5 +37,7 @@ private:
 	Qt3DCore::QEntity *m_rootEntity = nullptr;
 	Map *m_map = nullptr;
 	Player *m_player = nullptr;
-	Enemy *m_enemy = nullptr;
+	Enemy *m_enemy0 = nullptr;
+	Enemy *m_enemy1 = nullptr;
+	Enemy *m_enemy2 = nullptr;
 };

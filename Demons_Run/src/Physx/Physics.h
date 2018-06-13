@@ -16,12 +16,13 @@ public:
 
 	void InitializePhysics();
 	void UpdatePhysics();
-
 	// getters
 
 	// setters
 
 private:
+	bool CollisionTest(QVector3D p1, QVector3D e1);
+
 	Window3D & m_wnd;
 	Graphics & m_graphics;
 
@@ -29,5 +30,7 @@ private:
 	bool m_playerMoving;
 
 	Player *m_player1 = nullptr;
+	Enemy *m_enemy0 = nullptr;
 	Enemy *m_enemy1 = nullptr;
+	Enemy *m_enemy2 = nullptr;
 };

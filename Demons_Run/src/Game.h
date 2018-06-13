@@ -25,13 +25,14 @@ public:
 private:
 	void ComposeFrame();
 	void UpdateModel();
+
 	/********************************/
 	/*  User Functions              */
-
+	void ShowStartScreen();
 private slots:
 	void MainGameLoop();
-	
 	/********************************/
+
 private:
 	/********************************/
 	/*  User Variables              */
@@ -39,6 +40,8 @@ private:
 	Graphics m_gfx;
 	QTimer *m_timer = nullptr;
 	Physics *m_physics = nullptr;
+	// state 0 = startup Screen, 1 = playing, 2 = end Screen
+	int m_gameState = 0;
 
 	/********************************/
 };

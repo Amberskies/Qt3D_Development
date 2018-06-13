@@ -36,4 +36,32 @@ int main(int argc, char *argv[])
 	Enemy:
 		Copied Player to create an Enemy class.
 	
+	Dice:
+		Initialized in Game.cpp 
+		files in GameRules.
+
+	Startup Screen function
+		Hit Return to Play.
+	
+
 	*/
+
+	/**
+	* GameRules: here i will lay down the outline for AmberRPG Rule Set.
+	*
+	* Basic Dice Rolls useing 3d6:
+	* Success Rolls
+	*
+	* Genral Game Rules:
+	* Physical Feats
+	* Mental Feats
+	* Combat
+	* Injury, Illness, Fatigue
+	*
+	* Magic:
+	* Game World:
+	* Jobs:
+	* Tech Levels:
+	* Travel Between Game Worlds:
+	* Game Time:
+	**/

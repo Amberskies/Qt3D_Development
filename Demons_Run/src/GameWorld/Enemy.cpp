@@ -4,6 +4,7 @@
 #include <QMesh>
 #include <QPhongMaterial> 
 #include "src/Core/ModelLoader.h"
+#include "src/GameRules/Dice.h"
 
 Enemy::Enemy(Qt3DCore::QEntity *rootEntity) :
     m_rootEntity(rootEntity)
@@ -12,7 +13,7 @@ Enemy::Enemy(Qt3DCore::QEntity *rootEntity) :
 	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xF40000)));
 
     Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-    testTransform->setTranslation(QVector3D(24.0f, 1.0f, 20.0f));
+    testTransform->setTranslation(QVector3D((float)(Dice::RollDice(1,29)), 1.0f, (float)(Dice::RollDice(1, 29))));
 
     m_Enemy = new Qt3DCore::QEntity(m_rootEntity);
     m_Enemy->addComponent(testMesh);

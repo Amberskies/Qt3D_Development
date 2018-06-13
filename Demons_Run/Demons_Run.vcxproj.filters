@@ -61,6 +61,12 @@
     <Filter Include="Assets\TL3">
       <UniqueIdentifier>{738597ef-e715-496f-a452-a23615fa3af5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameRules">
+      <UniqueIdentifier>{9972b448-5f0a-4487-85fb-132457ddf358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameRules">
+      <UniqueIdentifier>{899a4aa9-7e6d-4dcc-aaa6-268abc761bfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -94,6 +100,9 @@
     <ClCompile Include="src\GameWorld\Enemy.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameRules\Dice.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -110,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="src\Core\ModelLoader.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameRules\Dice.h">
+      <Filter>Header Files\GameRules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
