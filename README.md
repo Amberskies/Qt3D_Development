@@ -7,4 +7,5 @@ Contact : amberskies@virginmedia.com
 Basic Framework : this is the startpoint for any game development
 Please note - this is very basic c++ code - Please modify and update for your own needs.
 
-Demons Run : Work in Progress - It will build upon the initial Framework.
+Demons Run : Work in Progress - First release of this awesome game
+Yesy this is a full game written in a simple style - feel free to have fun with it.
