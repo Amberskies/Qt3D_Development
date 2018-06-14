@@ -17,7 +17,7 @@ public:
 	void InitializePhysics();
 	void UpdatePhysics();
 	// getters
-
+	int GetScore();
 	// setters
 
 private:
@@ -33,4 +33,5 @@ private:
 	Enemy *m_enemy0 = nullptr;
 	Enemy *m_enemy1 = nullptr;
 	Enemy *m_enemy2 = nullptr;
+	int m_score = 0;
 };

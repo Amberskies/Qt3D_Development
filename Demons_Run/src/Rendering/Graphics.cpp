@@ -52,6 +52,25 @@ void Graphics::startScreen()
 
 }
 
+void Graphics::gameOverScreen()
+{
+	Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Mesh/GameOverText.obj");
+	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xE0D0C0)));
+
+	Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
+	testTransform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -135.0f));
+	testTransform->setTranslation(QVector3D(17.0f, 6.0f, 15.0f));
+
+	m_gameOverScreen = new Qt3DCore::QEntity(m_rootEntity);
+	m_gameOverScreen->addComponent(testMesh);
+	m_gameOverScreen->addComponent(testMaterial);
+	m_gameOverScreen->addComponent(testTransform);
+
+	qWarning("Game Over Screen Created");
+	m_gameOverScreen->setEnabled(false);
+
+}
+
 void Graphics::createPlayer()
 {
 	m_player = new Player(m_rootEntity);
@@ -102,4 +121,9 @@ void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)
 void Graphics::SetStartScreen(bool isShowing)
 {
 	m_startScreen->setEnabled(isShowing);
+}
+
+void Graphics::SetGameOverScreen(bool isShowing)
+{
+	m_gameOverScreen->setEnabled(isShowing);
 }

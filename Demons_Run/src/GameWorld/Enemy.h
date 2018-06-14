@@ -18,6 +18,7 @@ public:
 
 	// getters
     Qt3DCore::QEntity *getEnemy();
+	bool getIsAlive();
 	QVector3D getEnemyPosition();
 
 	//setters

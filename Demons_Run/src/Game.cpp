@@ -13,6 +13,7 @@ Game::Game(Window3D & window3D) :
 	m_gfx.SetRoot(m_window3D.getSceneRoot());
 	
 	m_gfx.startScreen();
+	m_gfx.gameOverScreen();
 	m_gfx.createPlayer();
 	m_gfx.createEnemy();
 	m_gfx.createMap();
@@ -56,9 +57,18 @@ void Game::MainGameLoop()
 			ComposeFrame();
 			m_gfx.EndFrame();
 		}
+		else if(m_gameState == 2)
+		{
+			m_window3D.Update(); // Updates user input to the Window
+
+			if (Input::keyPressed(Qt::Key_Return))
+			{
+				exit(0);
+			}
+		}
 		else
 		{
-			// end screen
+			qWarning("Game State is out of bounds.");
 		}
 	}
 	
@@ -71,6 +81,13 @@ void Game::ComposeFrame()
 {
 	m_window3D.Update(); // Updates user input to the Window
 	m_physics->UpdatePhysics(); // Updates all Physical Objects/Entities
+
+	int score = m_physics->GetScore();
+	if (score == 3)
+	{
+		m_gameState = 2;
+		m_gfx.SetGameOverScreen(true);
+	}
 }
 
 void Game::UpdateModel()

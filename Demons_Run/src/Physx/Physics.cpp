@@ -21,7 +21,7 @@ void Physics::InitializePhysics()
 	m_enemy0 = m_graphics.GetEnemy0();
 	m_enemy1 = m_graphics.GetEnemy1();
 	m_enemy2 = m_graphics.GetEnemy2();
-
+	m_score = 0;
 }
 
 void Physics::UpdatePhysics()
@@ -45,6 +45,12 @@ void Physics::UpdatePhysics()
 	collided = CollisionTest(p1, e0);
 	if (collided)
 	{
+		if (m_enemy0->getIsAlive())
+		{
+			m_score++;
+			qWarning("Enemy 0 is dead");
+		}
+
 		m_enemy0->setDead(true);
 	}
 	
@@ -52,6 +58,12 @@ void Physics::UpdatePhysics()
 	collided = CollisionTest(p1, e1);
 	if (collided)
 	{
+		if (m_enemy1->getIsAlive()) 
+		{
+			m_score++;
+			qWarning("Enemy 1 is dead");
+		}
+
 		m_enemy1->setDead(true);
 	}
 	
@@ -59,9 +71,20 @@ void Physics::UpdatePhysics()
 	collided = CollisionTest(p1, e2);
 	if (collided)
 	{
+		if (m_enemy2->getIsAlive())
+		{
+			m_score++;
+			qWarning("Enemy 2 is dead");
+		}
+
 		m_enemy2->setDead(true);
 	}
 
+}
+
+int Physics::GetScore()
+{
+	return m_score;
 }
 
 bool Physics::CollisionTest(QVector3D p1, QVector3D e1)

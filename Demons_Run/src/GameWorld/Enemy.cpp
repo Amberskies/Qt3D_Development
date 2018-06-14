@@ -33,6 +33,7 @@ Qt3DCore::QEntity *Enemy::getEnemy()
     return m_Enemy;
 }
 
+
 QVector3D Enemy::getEnemyPosition()
 {
 	Qt3DCore::QComponentVector EnemyVector;
@@ -55,6 +56,11 @@ void Enemy::setEnemyPosition(QVector3D EnemyPosition)
 
 void Enemy::setDead(bool isdead)
 {
+	isAlive = !isdead;
 	m_Enemy->setEnabled(!isdead);
 }
 
+bool Enemy::getIsAlive()
+{
+	return isAlive;
+}
