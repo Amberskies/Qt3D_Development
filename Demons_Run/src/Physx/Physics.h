@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MovePlayer.h"
+#include "MoveEnemy.h"
 #include "src/Rendering/Window3D.h"
 #include "src/GameWorld/Player.h"
 #include "src/GameWorld/Enemy.h"
@@ -27,6 +28,7 @@ private:
 	Graphics & m_graphics;
 
 	MovePlayer m_movePlayer;
+	MoveEnemy m_moveEnemy;
 	bool m_playerMoving;
 
 	Player *m_player1 = nullptr;

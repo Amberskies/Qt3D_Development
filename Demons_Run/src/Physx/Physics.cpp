@@ -22,6 +22,7 @@ void Physics::InitializePhysics()
 	m_enemy1 = m_graphics.GetEnemy1();
 	m_enemy2 = m_graphics.GetEnemy2();
 	m_score = 0;
+	m_moveEnemy.setEnemy(m_enemy0, m_enemy1, m_enemy2);
 }
 
 void Physics::UpdatePhysics()
@@ -35,6 +36,8 @@ void Physics::UpdatePhysics()
 
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer.setMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
+
+	m_moveEnemy.UpdateMoveEnemy();
 
 	QVector3D p1 = m_player1->getPlayerPosition();
 	QVector3D e0 = m_enemy0->getEnemyPosition();

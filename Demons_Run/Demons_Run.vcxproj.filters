@@ -103,6 +103,9 @@
     <ClCompile Include="src\GameRules\Dice.cpp">
       <Filter>Source Files\GameRules</Filter>
     </ClCompile>
+    <ClCompile Include="MoveEnemy.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -122,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="src\GameRules\Dice.h">
       <Filter>Header Files\GameRules</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveEnemy.h">
+      <Filter>Header Files\Physx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

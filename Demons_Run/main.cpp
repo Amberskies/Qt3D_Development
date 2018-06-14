@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	QGuiApplication a(argc, argv);
 
 	Window3D wnd;
-	wnd.setBackgroundColor(Qt::darkBlue);
+	wnd.setBackgroundColor(Qt::black);
 	//wnd.show();
 	Game myGame(wnd);
 	myGame.Go();
@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
 
 	Enemy:
 		Copied Player to create an Enemy class.
+		lets get them moving
+		add a velocity
+		check for boundary -> alter velocity
 	
 	Dice:
 		Initialized in Game.cpp 
