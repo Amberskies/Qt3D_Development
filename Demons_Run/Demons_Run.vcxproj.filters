@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{c317e140-671d-4b97-8f38-f8b7d3e5b10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{106bf68b-6134-4693-b07e-5dca6b3f4acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{00515469-cfbb-4a71-99fa-b0ff29a4178d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{e7aa529a-c483-4dfc-8555-461e25bfb1d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameWorld">
+      <UniqueIdentifier>{060bffec-9706-4dbd-8768-0a9978a328fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameWorld">
+      <UniqueIdentifier>{b6feedab-bd4e-44bb-96a9-03c825e09974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Physx">
+      <UniqueIdentifier>{506e8709-3921-485f-a2ce-15f37bc6196c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physx">
+      <UniqueIdentifier>{f138966c-1c90-439a-aa4b-099616ec9972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{761318fc-8b22-4c54-9c36-2a6877bdeb76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Maps">
+      <UniqueIdentifier>{6d20bde4-34b4-4c78-bc73-b72a5c401862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Mesh">
+      <UniqueIdentifier>{206c5597-49a5-48b6-b781-73ce0368eac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\MP3">
+      <UniqueIdentifier>{dba270b4-142e-4cab-87a7-2a3e492e4c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Player">
+      <UniqueIdentifier>{eefa58f4-1fbf-4c00-9c19-ef940d1d154d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\TL3">
+      <UniqueIdentifier>{738597ef-e715-496f-a452-a23615fa3af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameRules">
+      <UniqueIdentifier>{9972b448-5f0a-4487-85fb-132457ddf358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameRules">
+      <UniqueIdentifier>{899a4aa9-7e6d-4dcc-aaa6-268abc761bfe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Core\Input.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Window3D.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Graphics.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Map.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physx\MovePlayer.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Player.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physx\Physics.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ModelLoader.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Enemy.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameRules\Dice.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveEnemy.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\Input.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Graphics.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physx\MovePlayer.h">
+      <Filter>Header Files\Physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physx\Physics.h">
+      <Filter>Header Files\Physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\ModelLoader.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameRules\Dice.h">
+      <Filter>Header Files\GameRules</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveEnemy.h">
+      <Filter>Header Files\Physx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\Rendering\Window3D.h">
+      <Filter>Header Files\Rendering</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Game.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Map.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Player.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Enemy.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Assets\Player\Attributes.default">
+      <Filter>Assets\Player</Filter>
+    </None>
+    <None Include="..\Assets\Player\Player1.ply">
+      <Filter>Assets\Player</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Assets\Maps\grass.png">
+      <Filter>Assets\Maps</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
