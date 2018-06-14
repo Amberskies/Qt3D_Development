@@ -17,6 +17,7 @@ public:
 	void BeginFrame();
 	void EndFrame();
 
+	void startScreen();
 	void createPlayer();
 	void createEnemy();
 	void createMap();
@@ -32,6 +33,7 @@ public:
 	Enemy* GetEnemy2();
 	// Sets
 	void SetRoot(Qt3DCore::QEntity *rootEntity);
+	void SetStartScreen(bool isShowing);
 
 private:
 	Qt3DCore::QEntity *m_rootEntity = nullptr;
@@ -40,4 +42,5 @@ private:
 	Enemy *m_enemy0 = nullptr;
 	Enemy *m_enemy1 = nullptr;
 	Enemy *m_enemy2 = nullptr;
+	Qt3DCore::QEntity *m_startScreen = nullptr;
 };

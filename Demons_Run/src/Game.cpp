@@ -12,6 +12,7 @@ Game::Game(Window3D & window3D) :
 	// Take the root of the main window and give it to the Graphics
 	m_gfx.SetRoot(m_window3D.getSceneRoot());
 	
+	m_gfx.startScreen();
 	m_gfx.createPlayer();
 	m_gfx.createEnemy();
 	m_gfx.createMap();
@@ -82,6 +83,10 @@ void Game::UpdateModel()
 void Game::ShowStartScreen()
 {
 	m_window3D.Update(); // Updates user input to the Window
-	if (Input::keyPressed(Qt::Key_Return)) m_gameState = 1;;
-
+	if (Input::keyPressed(Qt::Key_Return)) 
+	{
+		m_gameState = 1;;
+		m_gfx.SetStartScreen(false);
+		qWarning("Start Screen Closed");
+	}
 }

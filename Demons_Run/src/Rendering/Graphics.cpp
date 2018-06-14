@@ -1,5 +1,6 @@
 #include "Graphics.h"
 
+#include "src/Core/ModelLoader.h"
 
 Graphics::Graphics()
 {
@@ -13,6 +14,7 @@ Graphics::~Graphics()
 	delete m_enemy0;
 	delete m_enemy1;
 	delete m_enemy2;
+	delete m_startScreen;
 	delete m_player;
 
 	//delete m_rootEntity; // gets deleted by parent=Window3D
@@ -31,6 +33,24 @@ void Graphics::EndFrame()
 }
 
 
+
+void Graphics::startScreen()
+{
+	Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Mesh/StartText.obj");
+	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xE0D0C0)));
+
+	Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
+	testTransform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), -135.0f));
+	testTransform->setTranslation(QVector3D(19.0f, 6.0f, 15.0f));
+
+	m_startScreen = new Qt3DCore::QEntity(m_rootEntity);
+	m_startScreen->addComponent(testMesh);
+	m_startScreen->addComponent(testMaterial);
+	m_startScreen->addComponent(testTransform);
+
+	qWarning("Start Screen Created");
+
+}
 
 void Graphics::createPlayer()
 {
@@ -77,4 +97,9 @@ Enemy * Graphics::GetEnemy2()
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)
 {
 	m_rootEntity = rootEntity;
+}
+
+void Graphics::SetStartScreen(bool isShowing)
+{
+	m_startScreen->setEnabled(isShowing);
 }
