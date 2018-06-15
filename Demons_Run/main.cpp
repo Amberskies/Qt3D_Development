@@ -37,7 +37,9 @@ int main(int argc, char *argv[])
 		Copied Player to create an Enemy class.
 		lets get them moving
 		add a velocity
-		check for boundary -> alter velocity
+		check for boundary -> alter direction
+	MoveEnemy:
+		Added to Physx
 	
 	Dice:
 		Initialized in Game.cpp 
