@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
 		game go
 		composeFrame for game logic
 		updateModel for the main game Update
+
+	ToDo *****************************************
 	Player:
 	Map:
 	MovePlayer:
