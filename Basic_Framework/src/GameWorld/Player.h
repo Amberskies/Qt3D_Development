@@ -4,22 +4,24 @@
 #include <QObject>
 #include <QEntity>
 
-
 class Player : public QObject
 {
     Q_OBJECT
 
-    Qt3DCore::QEntity *m_rootEntity;
-    Qt3DCore::QEntity *m_player;
 public:
-    explicit Player(Qt3DCore::QEntity *rootEntity);
-    virtual ~Player();
+	explicit Player(Qt3DCore::QEntity *rootEntity);
+	virtual ~Player();
 
-    Qt3DCore::QEntity *getPlayer();
+	// getters
+	Qt3DCore::QEntity *GetPlayer();
+	QVector3D GetPlayerPosition();
 
-signals:
+	//setters
+	void SetPlayerPosition(QVector3D playerPosition);
+private:
+	Qt3DCore::QEntity *m_rootEntity;
+	Qt3DCore::QEntity *m_player;
 
-public slots:
 };
 
 #endif // PLAYER_H

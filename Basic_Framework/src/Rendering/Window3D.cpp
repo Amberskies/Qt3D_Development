@@ -5,11 +5,8 @@ Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent),
 	m_sceneRoot(new Qt3DCore::QEntity)
 {
-	//this->setRootEntity(m_sceneRoot); // Starts the Qt3D engine.- moved to Game::Go
-
 	this->show();
 	InitializeWindow3D();
-	qWarning("Window 3D : Created");
 }
 
 Window3D::~Window3D()
@@ -20,8 +17,6 @@ Window3D::~Window3D()
 	delete m_lightEntity;
 	delete m_cameraEntity;
 	delete m_sceneRoot;
-
-	qWarning("Window 3D : Destroyed");
 }
 
 void Window3D::Update()
@@ -38,7 +33,6 @@ void Window3D::InitializeWindow3D()
 	m_cameraEntity->translate(QVector3D(0.0f, 30.0f, 0.0f));
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
 	m_cameraEntity->setViewCenter(QVector3D(15.0f, 0.5f, 15.0f));
-	qWarning("Camera Created");
 
 	// Light ( placed at cameras initial position for 'convenience'
 	// It can be paced anywhere with setTranslation(QVector3D(x, y, z)
@@ -50,35 +44,33 @@ void Window3D::InitializeWindow3D()
 	m_lightTransform = new Qt3DCore::QTransform(m_lightEntity);
 	m_lightTransform->setTranslation(m_cameraEntity->position());
 	m_lightEntity->addComponent(m_lightTransform);
-	qWarning("Point Light Created");
 }
 
 // ***** Getters *****
 
-Qt3DRender::QCamera *Window3D::getCamera()
+Qt3DRender::QCamera *Window3D::GetCamera()
 {
-
 	return m_cameraEntity;
 }
 
-Qt3DCore::QEntity * Window3D::getSceneRoot()
+Qt3DCore::QEntity * Window3D::GetSceneRoot()
 {
 	return m_sceneRoot;
 }
 
-Qt3DCore::QEntity * Window3D::getPointLight()
+Qt3DCore::QEntity * Window3D::GetPointLight()
 {
 	return m_lightEntity;
 }
 
 // ***** Setters *****
 
-void Window3D::setBackgroundColor(QColor color)
+void Window3D::SetBackgroundColor(QColor color)
 {
 	this->defaultFrameGraph()->setClearColor(QColor(color));
 }
 
-// ***** Events *****
+// ***** Inherited Protected Events *****
 
 void Window3D::mousePressEvent(QMouseEvent *event)
 {
@@ -169,6 +161,9 @@ m_transform.rotate(1.0f, QVector3D(0.4f, 0.3f, 0.3f));
 
 // Schedule a redraw
 QOpenGLWindow::update();
+
+m_Timer->start(10);
+
 }
 
 

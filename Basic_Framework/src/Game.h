@@ -36,7 +36,7 @@ private:
 	/*  User Variables              */
 	Window3D & m_window3D;
 	Graphics *m_gfx;
-	QTimer *m_timer;
+	QTimer m_timer;
 
 	/********************************/
 };

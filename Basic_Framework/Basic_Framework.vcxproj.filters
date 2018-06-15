@@ -14,11 +14,6 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
     <Filter Include="Generated Files">
       <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
       <Extensions>moc;h;cpp</Extensions>
@@ -35,15 +30,6 @@
     </Filter>
     <Filter Include="Header Files\Rendering">
       <UniqueIdentifier>{e7aa529a-c483-4dfc-8555-461e25bfb1d2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Assets">
-      <UniqueIdentifier>{eeb83d17-0346-4087-9d75-e14534f370af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Assets\Mesh">
-      <UniqueIdentifier>{28a3e677-1fe8-4e0a-9f96-06147cc8643d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Assets\Player">
-      <UniqueIdentifier>{ffdc7a78-e098-409c-9930-ded913f1891b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\GameWorld">
       <UniqueIdentifier>{060bffec-9706-4dbd-8768-0a9978a328fd}</UniqueIdentifier>
@@ -81,6 +67,9 @@
     <ClCompile Include="src\GameWorld\Player.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\ModelLoader.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -91,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="src\Physx\MovePlayer.h">
       <Filter>Header Files\Physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\ModelLoader.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,21 +98,5 @@
     <QtMoc Include="src\GameWorld\Player.h">
       <Filter>Header Files\GameWorld</Filter>
     </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Mesh\Dice.ply">
-      <Filter>Resource Files\Assets\Mesh</Filter>
-    </None>
-    <None Include="Assets\Mesh\Creeper.ply">
-      <Filter>Resource Files\Assets\Mesh</Filter>
-    </None>
-    <None Include="Assets\Player\Player1.ply">
-      <Filter>Resource Files\Assets\Player</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\Mesh\creeper.png">
-      <Filter>Resource Files\Assets\Mesh</Filter>
-    </Image>
   </ItemGroup>
 </Project>

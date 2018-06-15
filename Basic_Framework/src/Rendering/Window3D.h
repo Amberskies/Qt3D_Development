@@ -22,17 +22,18 @@ public:
 	void InitializeWindow3D();
 
 	// Gets
-	Qt3DRender::QCamera* getCamera();
-	Qt3DCore::QEntity* getSceneRoot();
-	Qt3DCore::QEntity* getPointLight();
+	Qt3DRender::QCamera* GetCamera();
+	Qt3DCore::QEntity* GetSceneRoot();
+	Qt3DCore::QEntity* GetPointLight();
 	// Sets
-	void setBackgroundColor(QColor color);
+	void SetBackgroundColor(QColor color);
 
 protected:
-	void mousePressEvent(QMouseEvent *event);
-	void mouseReleaseEvent(QMouseEvent *event);
-	void keyPressEvent(QKeyEvent *event);
-	void keyReleaseEvent(QKeyEvent *event);
+	// inherited from QWindow.
+	void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+	void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+	void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+	void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 
 private:
 	Qt3DCore::QEntity *m_sceneRoot;

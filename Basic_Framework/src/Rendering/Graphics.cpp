@@ -2,15 +2,11 @@
 
 #include "src/Core/Input.h"
 
-
-
 Graphics::Graphics(Window3D & window3D) 
 	: m_wnd(window3D)
 	, m_playerMoving(false)
-	, m_movePlayer(new MovePlayer)
 {
-	qWarning("Graphics Created");
-
+	// Empty
 }
 
 Graphics::~Graphics()
@@ -18,30 +14,15 @@ Graphics::~Graphics()
 	delete m_map;
 	delete m_player;
 	delete m_entity;
-
 	//delete m_rootEntity; // gets deleted by parent=Window3D
-
-	qWarning("Graphics Destroyed");
 }
 
-void Graphics::BeginFrame()
-{
-	// Empty
-}
-
-void Graphics::EndFrame()
-{
-	// Empty
-}
-
-
-
-void Graphics::createPlayer()
+void Graphics::CreatePlayer()
 {
 	m_player = new Player(m_rootEntity);
 }
 
-void Graphics::createMap()
+void Graphics::CreateMap()
 {
 	m_map = new Map(m_rootEntity);
 }
@@ -53,25 +34,17 @@ void Graphics::UpdateGraphics()
 	int centerPosy = m_wnd.height() / 2;
 
 	if (m_playerMoving) m_playerMoving = 
-		m_movePlayer->updatePlayerMovement(m_player->getPlayer(), m_wnd.getCamera());
+		m_movePlayer.UpdatePlayerMovement(m_player->GetPlayer(), m_wnd.GetCamera());
 
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
-		m_playerMoving = m_movePlayer->setMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
+		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
 }
-
 
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)
 {
 	m_rootEntity = rootEntity;
 }
-
-
-
-
-
-
-
-
+// Notes for textures
 
 ///////////////////////////////////////////////////////////////
 //#include <QMesh>

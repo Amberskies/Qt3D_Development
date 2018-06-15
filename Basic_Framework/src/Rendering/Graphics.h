@@ -15,15 +15,10 @@ public:
 	Graphics& operator=(const Graphics&) = delete;
 	~Graphics();
 
-	void BeginFrame();
-	void EndFrame();
-
-	void createPlayer();
-	void createMap();
+	void CreatePlayer();
+	void CreateMap();
 
 	void UpdateGraphics();
-
-	//void test();
 
 	// Gets
 
@@ -36,6 +31,6 @@ private:
 	Player *m_player = nullptr;
 	Map *m_map = nullptr;
 	Window3D& m_wnd;
-	MovePlayer *m_movePlayer;
+	MovePlayer m_movePlayer;
 	bool m_playerMoving;
 };

@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 	QGuiApplication a(argc, argv);
 
 	Window3D wnd;
-	wnd.setBackgroundColor(Qt::darkBlue);
-	//wnd.show();
+	wnd.SetBackgroundColor(Qt::darkBlue);
+
 	Game myGame(wnd);
 	myGame.Go();
 
