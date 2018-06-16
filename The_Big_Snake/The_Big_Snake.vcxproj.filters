@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Physx">
       <UniqueIdentifier>{f138966c-1c90-439a-aa4b-099616ec9972}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Rendering\CustomAspect">
+      <UniqueIdentifier>{befc4fb3-8a8c-4dcb-b2cf-cc888ace8784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering\CustomAspect">
+      <UniqueIdentifier>{4a975780-b698-4f8c-9330-4ef730da6fdb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -70,6 +76,21 @@
     <ClCompile Include="src\Core\ModelLoader.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Rendering\FPS_Component\CustomAspect.cpp">
+      <Filter>Source Files\Rendering\CustomAspect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\FPS_Component\FpsMonitor.cpp">
+      <Filter>Source Files\Rendering\CustomAspect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\FPS_Component\FpsMonitorBackend.cpp">
+      <Filter>Source Files\Rendering\CustomAspect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\FPS_Component\MovingAverage.cpp">
+      <Filter>Source Files\Rendering\CustomAspect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.cpp">
+      <Filter>Source Files\Rendering\CustomAspect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -84,6 +105,15 @@
     <ClInclude Include="src\Core\ModelLoader.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rendering\FPS_Component\FpsMonitorBackend.h">
+      <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\FPS_Component\MovingAverage.h">
+      <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.h">
+      <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Rendering\Window3D.h">
@@ -97,6 +127,12 @@
     </QtMoc>
     <QtMoc Include="src\GameWorld\Player.h">
       <Filter>Header Files\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Rendering\FPS_Component\CustomAspect.h">
+      <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Rendering\FPS_Component\FpsMonitor.h">
+      <Filter>Header Files\Rendering\CustomAspect</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

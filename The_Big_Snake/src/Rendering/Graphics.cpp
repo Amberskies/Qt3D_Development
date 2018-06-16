@@ -1,12 +1,13 @@
 #include "Graphics.h"
 
 #include "src/Core/Input.h"
+#include <QString>
 
 Graphics::Graphics(Window3D & window3D) 
 	: m_wnd(window3D)
 	, m_playerMoving(false)
 {
-	// Empty
+	m_fpsEntity = m_wnd.GetFps();
 }
 
 Graphics::~Graphics()
@@ -14,6 +15,7 @@ Graphics::~Graphics()
 	delete m_map;
 	delete m_player;
 	delete m_entity;
+	//delete m_fpsEntity; // gets deleted by parent=Window3D
 	//delete m_rootEntity; // gets deleted by parent=Window3D
 }
 
@@ -38,6 +40,12 @@ void Graphics::UpdateGraphics()
 
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
+
+	Qt3DCore::QComponentVector fpsVector = m_fpsEntity->components();
+	FpsMonitor *fpsMon = qobject_cast<FpsMonitor*>(fpsVector.at(0));
+	float fps = fpsMon->FramesPerSecond();
+	QString f = QString::number(fps);
+	m_wnd.setTitle("Your FPS =  " + f);
 }
 
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)

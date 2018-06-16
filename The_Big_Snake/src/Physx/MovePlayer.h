@@ -8,7 +8,7 @@
 class MovePlayer
 {
 public:
-    MovePlayer();
+    explicit MovePlayer();
     bool UpdatePlayerMovement(Qt3DCore::QEntity *player, Qt3DRender::QCamera *camera);
 
 	// Getters

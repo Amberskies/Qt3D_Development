@@ -1,10 +1,16 @@
 #include "Window3D.h"
+
+#include <QString>
 #include "src/Core/Input.h"
+#include "src/Rendering/FPS_Component/CustomAspect.h"
+
 
 Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent),
-	m_sceneRoot(new Qt3DCore::QEntity)
+	m_sceneRoot(new Qt3DCore::QEntity) 
 {
+	this->registerAspect(new CustomAspect);
+
 	this->show();
 	InitializeWindow3D();
 }
@@ -12,6 +18,7 @@ Window3D::Window3D(QScreen *parent)
 Window3D::~Window3D()
 {
 	this->setRootEntity(nullptr); // Stops the Qt3D engine.
+	delete m_fps;
 	delete m_lightTransform;
 	delete m_light;
 	delete m_lightEntity;
@@ -23,8 +30,6 @@ void Window3D::Update()
 {
 	Input::update();
 }
-
-
 
 void Window3D::InitializeWindow3D()
 {
@@ -44,6 +49,11 @@ void Window3D::InitializeWindow3D()
 	m_lightTransform = new Qt3DCore::QTransform(m_lightEntity);
 	m_lightTransform->setTranslation(m_cameraEntity->position());
 	m_lightEntity->addComponent(m_lightTransform);
+
+	m_fps = new Qt3DCore::QEntity(m_sceneRoot);
+	FpsMonitor *fpsComponent = new FpsMonitor(m_fps);
+	fpsComponent->SetRollingMeanFrameCount(30);
+	m_fps->addComponent(fpsComponent);
 }
 
 // ***** Getters *****
@@ -61,6 +71,11 @@ Qt3DCore::QEntity * Window3D::GetSceneRoot()
 Qt3DCore::QEntity * Window3D::GetPointLight()
 {
 	return m_lightEntity;
+}
+
+Qt3DCore::QEntity * Window3D::GetFps()
+{
+	return m_fps;
 }
 
 // ***** Setters *****

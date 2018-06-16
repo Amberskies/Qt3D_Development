@@ -1,6 +1,5 @@
 #include "Game.h"
 
-
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
 	, m_gfx(new Graphics(window3D))

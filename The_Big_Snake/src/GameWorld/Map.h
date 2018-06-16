@@ -26,7 +26,7 @@ private:
 	const static int m_mapSizeX = 30;
 	const static int m_mapSizeY = 30;
 	Qt3DCore::QEntity *m_rootEntity;
-	Qt3DCore::QEntity *m_map[m_mapSizeX][m_mapSizeY];
+	Qt3DCore::QEntity *m_map[m_mapSizeX][m_mapSizeY] = { 0,0 };
 
 };
 

@@ -28,6 +28,7 @@ public:
 private:
 	Qt3DCore::QEntity *m_rootEntity = nullptr;
 	Qt3DCore::QEntity *m_entity = nullptr;
+	Qt3DCore::QEntity *m_fpsEntity = nullptr;
 	Player *m_player = nullptr;
 	Map *m_map = nullptr;
 	Window3D& m_wnd;
