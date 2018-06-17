@@ -17,8 +17,8 @@ public:
 
 	void CreatePlayer();
 	void CreateMap();
-
 	void UpdateGraphics();
+	void PickingTest();
 
 	// Gets
 

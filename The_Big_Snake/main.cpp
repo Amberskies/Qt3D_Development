@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	Just for giggles made a custom aspect - for FPS !!!!!!! - lol.
 	- its setup in Window3D Initialize and used (badly i may say) 
 	in Graphics.cpp UpdateGraphics().
+	it works and does not interfere with 3D rendering - Nice !
 	- so ho humm onwards :
 
 	ToDo *****************************************

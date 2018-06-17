@@ -5,7 +5,7 @@
 
 MovePlayer::MovePlayer()
 {
-    m_moveto = QVector2D(15.0f, 15.0f); // initial location of player
+    m_moveto = QVector2D(10.0f, 10.0f); // initial location of player
     m_move = QVector2D(0.0f, 0.0f); // normal move speed
     m_faceto = 0.0f;
     m_face = 0.0f;

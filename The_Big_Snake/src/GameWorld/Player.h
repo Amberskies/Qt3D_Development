@@ -18,6 +18,7 @@ public:
 
 	//setters
 	void SetPlayerPosition(QVector3D playerPosition);
+	void SetPlayerColor(QColor playerColor);
 private:
 	Qt3DCore::QEntity *m_rootEntity;
 	Qt3DCore::QEntity *m_player;

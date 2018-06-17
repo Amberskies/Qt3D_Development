@@ -3,6 +3,8 @@
 #include <QTransform>
 #include <QMesh>
 #include <QPhongMaterial> 
+#include <QObjectPicker>
+
 #include "src/Core/ModelLoader.h"
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :
@@ -14,11 +16,16 @@ Player::Player(Qt3DCore::QEntity *rootEntity) :
 	Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
 	testTransform->setTranslation(QVector3D(10.0f, 1.0f, 10.0f));
 
+	Qt3DRender::QObjectPicker *testPicker = new Qt3DRender::QObjectPicker();
+	testPicker->setHoverEnabled(true);
+	
 	m_player = new Qt3DCore::QEntity(m_rootEntity);
 	m_player->addComponent(testMesh);
 	m_player->addComponent(testMaterial);
 	m_player->addComponent(testTransform);
+	m_player->addComponent(testPicker);
 }
+
 
 Player::~Player()
 {
@@ -49,3 +56,14 @@ void Player::SetPlayerPosition(QVector3D playerPosition)
 	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
 	playerTransform->setTranslation(playerPosition);
 }
+
+void Player::SetPlayerColor(QColor playerColor)
+{
+	Qt3DCore::QComponentVector playerVector;
+	Qt3DExtras::QPhongMaterial *playerMaterial;
+
+	playerVector = m_player->components();
+	playerMaterial = qobject_cast<Qt3DExtras::QPhongMaterial *>(playerVector.at(1));
+	playerMaterial->setDiffuse(playerColor);
+}
+
