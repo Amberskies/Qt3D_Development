@@ -3,6 +3,7 @@
 #include <QtMath>
 #include <QTransform>
 
+
 MovePlayer::MovePlayer()
 {
     m_moveto = QVector2D(10.0f, 10.0f); // initial location of player
@@ -96,29 +97,22 @@ bool MovePlayer::SetMovePlayer(QPoint mousePos, QPoint centerPos)
     return movement;
 }
 
-bool MovePlayer::UpdatePlayerMovement(Qt3DCore::QEntity *player, Qt3DRender::QCamera *camera)
+bool MovePlayer::UpdatePlayerMovement(Player *player, Qt3DRender::QCamera *camera)
 {
     bool movement = true;
-    Qt3DCore::QComponentVector playerVector;
-    Qt3DCore::QTransform *playerTransform;
-    QVector3D playerPos;
-
-    playerVector = player->components();
-    playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-    playerPos = playerTransform->translation();
+    QVector3D playerPos = player->GetPlayerPosition();
 
     if(m_face != m_faceto)
     {
         m_face = m_faceto;
-        playerTransform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(0.0f, 1.0f, 0.0f), m_face));
+		player->SetPlayerRotaion(QVector3D(0.0f, 1.0f, 0.0f), m_face);
     }
-    // if player has not reached moveto - move player
+    
+	// if player has not reached moveto - move player
     if((playerPos.x() != m_moveto.x()) || (playerPos.z() != m_moveto.y()))
     {
-        playerTransform->setTranslation(QVector3D(playerPos.x() + m_move.x(), playerPos.y(), playerPos.z() + m_move.y()));
-        camera->translateWorld(QVector3D(m_move.x(), 0.0f, m_move.y()));
-        //qDebug() << "Player : " << playerPos;
-       // qDebug() << "Camera : " << camera->transform()->translation();
+       player->SetPlayerPosition(QVector3D(playerPos.x() + m_move.x(), playerPos.y(), playerPos.z() + m_move.y()));
+       camera->translateWorld(QVector3D(m_move.x(), 0.0f, m_move.y()));
     }
     else movement = false;
 

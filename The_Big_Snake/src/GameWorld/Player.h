@@ -22,6 +22,7 @@ public:
 	Qt3DRender::QObjectPicker *GetPlayerSelector();
 
 	//setters
+	void SetPlayerRotaion(QVector3D axis, float angle);
 	void SetPlayerPosition(QVector3D playerPosition);
 	void SetPlayerColor(QColor playerColor);
 private:

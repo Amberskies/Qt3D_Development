@@ -45,6 +45,12 @@ Qt3DRender::QObjectPicker * Player::GetPlayerSelector()
 	return m_picker;
 }
 
+void Player::SetPlayerRotaion(QVector3D axis, float angle)
+{
+	m_transform->setRotation(QQuaternion::fromAxisAndAngle(axis, angle));
+
+}
+
 void Player::SetPlayerPosition(QVector3D playerPosition)
 {
 	m_transform->setTranslation(playerPosition);

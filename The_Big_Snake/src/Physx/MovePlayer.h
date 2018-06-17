@@ -5,11 +5,13 @@
 #include <QCamera>
 #include <QVector2D>
 
+#include "src/GameWorld/Player.h"
+
 class MovePlayer
 {
 public:
     explicit MovePlayer();
-    bool UpdatePlayerMovement(Qt3DCore::QEntity *player, Qt3DRender::QCamera *camera);
+    bool UpdatePlayerMovement(Player *player, Qt3DRender::QCamera *camera);
 
 	// Getters
 

@@ -38,15 +38,14 @@ void Graphics::UpdateGraphics()
 	int centerPosy = m_wnd.height() / 2;
 
 	if (m_playerMoving) m_playerMoving = 
-		m_movePlayer.UpdatePlayerMovement(m_player->GetPlayer(), m_wnd.GetCamera());
+		m_movePlayer.UpdatePlayerMovement(m_player, m_wnd.GetCamera());
 
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
 
 	 PickingTest();
 
-	int fps = (int)m_wnd.GetFps();
-	QString f = QString::number(fps);
+	QString f = QString::number((int)m_wnd.GetFps());
 	m_wnd.setTitle("Your FPS =  " + f + "    ");
 }
 
