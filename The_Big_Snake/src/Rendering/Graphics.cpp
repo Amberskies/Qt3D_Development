@@ -43,9 +43,9 @@ void Graphics::UpdateGraphics()
 
 	Qt3DCore::QComponentVector fpsVector = m_fpsEntity->components();
 	FpsMonitor *fpsMon = qobject_cast<FpsMonitor*>(fpsVector.at(0));
-	float fps = fpsMon->FramesPerSecond();
+	int fps = (int)fpsMon->FramesPerSecond();
 	QString f = QString::number(fps);
-	m_wnd.setTitle("Your FPS =  " + f);
+	m_wnd.setTitle("Your FPS =  " + f + "    ");
 }
 
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)

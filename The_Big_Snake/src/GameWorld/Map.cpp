@@ -1,26 +1,20 @@
 #include "Map.h"
 #include "src/Core/ModelLoader.h"
-#include <QTextureMaterial>
+#include <QPhongMaterial>
 
 Map::Map(Qt3DCore::QEntity *rootEntity) :
 	m_rootEntity(rootEntity)
 {
-	Qt3DRender::QMesh *planeMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile.obj");
-	Qt3DExtras::QTextureMaterial *planeMaterial = ModelLoader::Texture("../Assets/Maps/grass.png");
+	Qt3DRender::QMesh *planeMesh = ModelLoader::LoadMesh("../Assets/Maps/BigBaseTile30x30.obj");
+	Qt3DExtras::QPhongMaterial *planeMaterial = ModelLoader::Material(QColor(Qt::darkGreen));
 
-	for (float x = 0.0f; x < 30.0f; x++)
-	{
-		for (float y = 0.0f; y < 30.0f; y++)
-		{
-			Qt3DCore::QEntity *tile = new Qt3DCore::QEntity(m_rootEntity);
-			Qt3DCore::QTransform *planeTransform = new Qt3DCore::QTransform();
-			planeTransform->setTranslation(QVector3D(x, 0.0f, y));
-			tile->addComponent(planeMesh);
-			tile->addComponent(planeMaterial);
-			tile->addComponent(planeTransform);
-			m_map[int(x)][(int)y] = tile;
-		}
-	}
+	m_map = new Qt3DCore::QEntity(m_rootEntity);
+
+	Qt3DCore::QTransform *planeTransform = new Qt3DCore::QTransform();
+	planeTransform->setTranslation(QVector3D(0.0f, 0.0f, 30.0f));
+	m_map->addComponent(planeMesh);
+	m_map->addComponent(planeMaterial);
+	m_map->addComponent(planeTransform);
 }
 
 Map::~Map()

@@ -12,7 +12,7 @@ Player::Player(Qt3DCore::QEntity *rootEntity) :
 	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xDD10EE)));
 
 	Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-	testTransform->setTranslation(QVector3D(15.0f, 1.0f, 15.0f));
+	testTransform->setTranslation(QVector3D(10.0f, 1.0f, 10.0f));
 
 	m_player = new Qt3DCore::QEntity(m_rootEntity);
 	m_player->addComponent(testMesh);

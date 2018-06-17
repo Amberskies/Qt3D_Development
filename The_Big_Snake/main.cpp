@@ -37,4 +37,5 @@ int main(int argc, char *argv[])
 
 	ToDo *****************************************
 	Ray Cast Object Picking for a 3D menu.
+	when mouse hovers over player - it changes colour.
 	*/
