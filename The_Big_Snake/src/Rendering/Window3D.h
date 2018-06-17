@@ -30,6 +30,7 @@ public:
 	float GetFps();
 	// Sets
 	void SetBackgroundColor(QColor color);
+	void SetLightPosition(QVector3D lightPosition);
 
 protected:
 	// inherited from QWindow.

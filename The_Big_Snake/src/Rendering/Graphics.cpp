@@ -47,6 +47,11 @@ void Graphics::UpdateGraphics()
 
 	QString f = QString::number((int)m_wnd.GetFps());
 	m_wnd.setTitle("Your FPS =  " + f + "    ");
+
+	if (Input::buttonPressed(Qt::LeftButton))
+	{
+		m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
+	}
 }
 
 void Graphics::PickingTest()

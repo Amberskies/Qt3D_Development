@@ -39,15 +39,13 @@ void Window3D::InitializeWindow3D()
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
 	m_cameraEntity->setViewCenter(QVector3D(10.0f, 0.5f, 10.0f));
 
-	// Light ( placed at cameras initial position for 'convenience'
-	// It can be paced anywhere with setTranslation(QVector3D(x, y, z)
 	m_lightEntity = new Qt3DCore::QEntity(m_sceneRoot);
 	m_light = new Qt3DRender::QPointLight(m_lightEntity);
 	m_light->setColor("white");
-	m_light->setIntensity(1);
+	m_light->setIntensity(0.8f);
 	m_lightEntity->addComponent(m_light);
 	m_lightTransform = new Qt3DCore::QTransform(m_lightEntity);
-	m_lightTransform->setTranslation(m_cameraEntity->position());
+	m_lightTransform->setTranslation(QVector3D(5.0f, 29.001f, 5.01f));
 	m_lightEntity->addComponent(m_lightTransform);
 
 	m_fps = new Qt3DCore::QEntity(m_sceneRoot);
@@ -83,6 +81,11 @@ float Window3D::GetFps()
 void Window3D::SetBackgroundColor(QColor color)
 {
 	this->defaultFrameGraph()->setClearColor(QColor(color));
+}
+
+void Window3D::SetLightPosition(QVector3D lightPosition)
+{
+	m_lightTransform->setTranslation(lightPosition);
 }
 
 // ***** Inherited Protected Events *****
