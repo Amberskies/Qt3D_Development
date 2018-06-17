@@ -1,35 +1,33 @@
 #include "Player.h"
-
-#include <QTransform>
-#include <QMesh>
-#include <QPhongMaterial> 
-#include <QObjectPicker>
-
 #include "src/Core/ModelLoader.h"
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :
 	m_rootEntity(rootEntity)
 {
-	Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Mesh/Dice.ply");
-	Qt3DExtras::QPhongMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xDD10EE)));
+	m_mesh = ModelLoader::LoadMesh("../Assets/Mesh/Dice.ply");
+	m_material = ModelLoader::Material(QColor(QRgb(0xDD10EE)));
 
-	Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-	testTransform->setTranslation(QVector3D(10.0f, 1.0f, 10.0f));
+	m_transform = new Qt3DCore::QTransform();
+	m_transform->setTranslation(QVector3D(10.0f, 1.0f, 10.0f));
 
-	Qt3DRender::QObjectPicker *testPicker = new Qt3DRender::QObjectPicker();
-	testPicker->setHoverEnabled(true);
+	m_picker = new Qt3DRender::QObjectPicker();
+	m_picker->setHoverEnabled(true);
+	m_picker->setEnabled(true);
 	
 	m_player = new Qt3DCore::QEntity(m_rootEntity);
-	m_player->addComponent(testMesh);
-	m_player->addComponent(testMaterial);
-	m_player->addComponent(testTransform);
-	m_player->addComponent(testPicker);
+	m_player->addComponent(m_mesh);
+	m_player->addComponent(m_material);
+	m_player->addComponent(m_transform);
+	m_player->addComponent(m_picker);
 }
 
 
 Player::~Player()
 {
-	// Empty
+	delete m_picker;
+	delete m_transform;
+	delete m_material;
+	delete m_mesh;
 }
 
 Qt3DCore::QEntity *Player::GetPlayer()
@@ -39,31 +37,21 @@ Qt3DCore::QEntity *Player::GetPlayer()
 
 QVector3D Player::GetPlayerPosition()
 {
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DCore::QTransform *playerTransform;
+	return m_transform->translation();
+}
 
-	playerVector = m_player->components();
-	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-	return playerTransform->translation();
+Qt3DRender::QObjectPicker * Player::GetPlayerSelector()
+{
+	return m_picker;
 }
 
 void Player::SetPlayerPosition(QVector3D playerPosition)
 {
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DCore::QTransform *playerTransform;
-
-	playerVector = m_player->components();
-	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-	playerTransform->setTranslation(playerPosition);
+	m_transform->setTranslation(playerPosition);
 }
 
 void Player::SetPlayerColor(QColor playerColor)
 {
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DExtras::QPhongMaterial *playerMaterial;
-
-	playerVector = m_player->components();
-	playerMaterial = qobject_cast<Qt3DExtras::QPhongMaterial *>(playerVector.at(1));
-	playerMaterial->setDiffuse(playerColor);
+	m_material->setDiffuse(playerColor);
 }
 

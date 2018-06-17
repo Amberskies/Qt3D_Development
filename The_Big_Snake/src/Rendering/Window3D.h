@@ -9,7 +9,6 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 
-
 #include "src/Rendering/FPS_Component/FpsMonitor.h"
 
 class Window3D : public Qt3DExtras::Qt3DWindow
@@ -28,7 +27,7 @@ public:
 	Qt3DRender::QCamera* GetCamera();
 	Qt3DCore::QEntity* GetSceneRoot();
 	Qt3DCore::QEntity* GetPointLight();
-	Qt3DCore::QEntity* GetFps();
+	float GetFps();
 	// Sets
 	void SetBackgroundColor(QColor color);
 
@@ -46,4 +45,5 @@ private:
 	Qt3DRender::QPointLight *m_light = nullptr;
 	Qt3DCore::QTransform *m_lightTransform = nullptr;
 	Qt3DCore::QEntity *m_fps = nullptr;
+	FpsMonitor *m_fpsComponent = nullptr;
 };

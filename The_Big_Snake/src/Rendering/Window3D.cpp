@@ -51,9 +51,9 @@ void Window3D::InitializeWindow3D()
 	m_lightEntity->addComponent(m_lightTransform);
 
 	m_fps = new Qt3DCore::QEntity(m_sceneRoot);
-	FpsMonitor *fpsComponent = new FpsMonitor(m_fps);
-	fpsComponent->SetRollingMeanFrameCount(30);
-	m_fps->addComponent(fpsComponent);
+	m_fpsComponent = new FpsMonitor(m_fps);
+	m_fpsComponent->SetRollingMeanFrameCount(30);
+	m_fps->addComponent(m_fpsComponent);
 }
 
 // ***** Getters *****
@@ -73,9 +73,9 @@ Qt3DCore::QEntity * Window3D::GetPointLight()
 	return m_lightEntity;
 }
 
-Qt3DCore::QEntity * Window3D::GetFps()
+float Window3D::GetFps()
 {
-	return m_fps;
+	return m_fpsComponent->FramesPerSecond();
 }
 
 // ***** Setters *****

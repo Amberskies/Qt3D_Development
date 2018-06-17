@@ -3,6 +3,10 @@
 
 #include <QObject>
 #include <QEntity>
+#include <QTransform>
+#include <QMesh>
+#include <QPhongMaterial> 
+#include <QObjectPicker>
 
 class Player : public QObject
 {
@@ -15,6 +19,7 @@ public:
 	// getters
 	Qt3DCore::QEntity *GetPlayer();
 	QVector3D GetPlayerPosition();
+	Qt3DRender::QObjectPicker *GetPlayerSelector();
 
 	//setters
 	void SetPlayerPosition(QVector3D playerPosition);
@@ -23,6 +28,10 @@ private:
 	Qt3DCore::QEntity *m_rootEntity;
 	Qt3DCore::QEntity *m_player;
 
+	Qt3DRender::QMesh *m_mesh = nullptr;
+	Qt3DExtras::QPhongMaterial *m_material = nullptr;
+	Qt3DCore::QTransform *m_transform = nullptr;
+	Qt3DRender::QObjectPicker *m_picker = nullptr;
 };
 
 #endif // PLAYER_H

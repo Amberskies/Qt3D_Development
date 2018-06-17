@@ -9,7 +9,7 @@ Graphics::Graphics(Window3D & window3D)
 	: m_wnd(window3D)
 	, m_playerMoving(false)
 {
-	m_fpsEntity = m_wnd.GetFps();
+	// Empty
 }
 
 Graphics::~Graphics()
@@ -43,28 +43,16 @@ void Graphics::UpdateGraphics()
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
 
-	/*if (Input::buttonPressed(Qt::LeftButton))*/ PickingTest();
+	 PickingTest();
 
-	Qt3DCore::QComponentVector fpsVector = m_fpsEntity->components();
-	FpsMonitor *fpsMon = qobject_cast<FpsMonitor*>(fpsVector.at(0));
-	int fps = (int)fpsMon->FramesPerSecond();
+	int fps = (int)m_wnd.GetFps();
 	QString f = QString::number(fps);
 	m_wnd.setTitle("Your FPS =  " + f + "    ");
-
-
 }
 
 void Graphics::PickingTest()
 {
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DRender::QObjectPicker *playerTestPicker;
-
-	playerVector = m_player->GetPlayer()->components();
-	playerTestPicker = qobject_cast<Qt3DRender::QObjectPicker *>(playerVector.at(3));
-
-	///////////////////test raycast picker////////////////////////////////
-
-	if (playerTestPicker->containsMouse())
+	if (m_player->GetPlayerSelector()->containsMouse())
 	{
 		m_player->SetPlayerColor(QColor(Qt::lightGray));
 	}
@@ -72,9 +60,6 @@ void Graphics::PickingTest()
 	{
 		m_player->SetPlayerColor(QColor(QRgb(0xDD10EE)));
 	}
-
-	//////////////////////////////////////////////////////////////////////
-
 }
 
 void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)
