@@ -34,4 +34,5 @@ private:
 	Window3D& m_wnd;
 	MovePlayer m_movePlayer;
 	bool m_playerMoving;
+	int m_counter = 0;
 };

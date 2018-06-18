@@ -19,7 +19,7 @@ Map::Map(Qt3DCore::QEntity *rootEntity) :
 
 Map::~Map()
 {
-	// Empty
+	delete m_map;
 }
 
 const int Map::GetMapSizeX()

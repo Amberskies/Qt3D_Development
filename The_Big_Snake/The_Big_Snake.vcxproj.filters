@@ -91,6 +91,9 @@
     <ClCompile Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.cpp">
       <Filter>Source Files\Rendering\CustomAspect</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameWorld\MapBoundaries.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -133,6 +136,9 @@
     </QtMoc>
     <QtMoc Include="src\Rendering\FPS_Component\FpsMonitor.h">
       <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\MapBoundaries.h">
+      <Filter>Header Files\GameWorld</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

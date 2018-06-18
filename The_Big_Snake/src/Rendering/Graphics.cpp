@@ -5,9 +5,10 @@
 #include <QObjectPicker>
 
 
-Graphics::Graphics(Window3D & window3D) 
+Graphics::Graphics(Window3D & window3D)
 	: m_wnd(window3D)
 	, m_playerMoving(false)
+	, m_counter(0)
 {
 	// Empty
 }
@@ -43,10 +44,15 @@ void Graphics::UpdateGraphics()
 	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
 		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
 
-	 PickingTest();
+	PickingTest();
 
-	QString f = QString::number((int)m_wnd.GetFps());
-	m_wnd.setTitle("Your FPS =  " + f + "    ");
+	m_counter++;
+	if (m_counter >= 100)
+	{
+		QString f = QString::number((int)m_wnd.GetFps());
+		m_wnd.setTitle("Your FPS =  " + f + "    ");
+		m_counter = 0;
+	}
 
 	if (Input::buttonPressed(Qt::LeftButton))
 	{
