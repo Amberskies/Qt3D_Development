@@ -7,7 +7,6 @@
 
 Graphics::Graphics(Window3D & window3D)
 	: m_wnd(window3D)
-	, m_playerMoving(false)
 	, m_counter(0)
 {
 	// Empty
@@ -15,6 +14,10 @@ Graphics::Graphics(Window3D & window3D)
 
 Graphics::~Graphics()
 {
+	delete m_mapWest;
+	delete m_mapEast;
+	delete m_mapSouth;
+	delete m_mapNorth;
 	delete m_map;
 	delete m_player;
 	delete m_entity;
@@ -22,29 +25,24 @@ Graphics::~Graphics()
 	//delete m_rootEntity; // gets deleted by parent=Window3D
 }
 
-void Graphics::CreatePlayer()
+void Graphics::InitializeGraphics(Qt3DCore::QEntity * rootEntity)
 {
+	m_rootEntity = rootEntity;
 	m_player = new Player(m_rootEntity);
-}
-
-void Graphics::CreateMap()
-{
 	m_map = new Map(m_rootEntity);
+	m_mapSouth = new MapBoundaries(m_rootEntity);
+	m_mapSouth->CreateSouthBoundary();
+	m_mapNorth = new MapBoundaries(m_rootEntity);
+	m_mapNorth->CreateNorthBoundary();
+	m_mapWest = new MapBoundaries(m_rootEntity);
+	m_mapWest->CreateWestBoundary();
+	m_mapEast = new MapBoundaries(m_rootEntity);
+	m_mapEast->CreateEastBoundary();
 }
 
 void Graphics::UpdateGraphics()
 {
-	QPoint mousePos = m_wnd.mapFromGlobal(Input::mousePosition());
-	int centerPosx = m_wnd.width() / 2;
-	int centerPosy = m_wnd.height() / 2;
-
-	if (m_playerMoving) m_playerMoving = 
-		m_movePlayer.UpdatePlayerMovement(m_player, m_wnd.GetCamera());
-
-	if (Input::buttonPressed(Qt::RightButton) && !m_playerMoving)
-		m_playerMoving = m_movePlayer.SetMovePlayer(mousePos, QPoint(centerPosx, centerPosy));
-
-	PickingTest();
+	m_moveSnake.UpdateMoveSnake();
 
 	m_counter++;
 	if (m_counter >= 100)
@@ -58,6 +56,7 @@ void Graphics::UpdateGraphics()
 	{
 		m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
 	}
+	PickingTest();
 }
 
 void Graphics::PickingTest()
@@ -72,10 +71,7 @@ void Graphics::PickingTest()
 	}
 }
 
-void Graphics::SetRoot(Qt3DCore::QEntity * rootEntity)
-{
-	m_rootEntity = rootEntity;
-}
+
 // Notes for textures
 
 ///////////////////////////////////////////////////////////////

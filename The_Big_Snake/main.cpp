@@ -36,9 +36,18 @@ int main(int argc, char *argv[])
 	it works and does not interfere with 3D rendering - Nice !
 	- so ho humm onwards :
 
-	Ray Cast Object Picking for a 3D menu.
+	Ray Cast Object Picking for a 3D menu. Tested in UpdateGraphics
+	works a charm - only after the first movement instruction to the renderer.
+	so carefull with this.
+	Had to add a small light movement to the Right mouse click to make it work
+	properly as the game starts up.
+
 	when mouse hovers over player - it changes colour.
 
-	ToDo *****************************************
 	Make boundaries for movement.
+
+
+	ToDo *****************************************
+	setup snake movement and the Left/Right key control
+	a totaly diffrent move and controll system required.
 	*/

@@ -106,7 +106,7 @@
     <ClCompile Include="src\GameWorld\Map.cpp" />
     <ClCompile Include="src\GameWorld\MapBoundaries.cpp" />
     <ClCompile Include="src\GameWorld\Player.cpp" />
-    <ClCompile Include="src\Physx\MovePlayer.cpp" />
+    <ClCompile Include="src\Physx\MoveSnake.cpp" />
     <ClCompile Include="src\Rendering\FPS_Component\CustomAspect.cpp" />
     <ClCompile Include="src\Rendering\FPS_Component\FpsMonitor.cpp" />
     <ClCompile Include="src\Rendering\FPS_Component\FpsMonitorBackend.cpp" />
@@ -130,7 +130,6 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
     </QtMoc>
-    <ClInclude Include="src\Physx\MovePlayer.h" />
     <QtMoc Include="src\Rendering\FPS_Component\CustomAspect.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
@@ -139,6 +138,7 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
     </QtMoc>
+    <ClInclude Include="src\Physx\MoveSnake.h" />
     <ClInclude Include="src\Rendering\FPS_Component\FpsMonitorBackend.h" />
     <ClInclude Include="src\Rendering\FPS_Component\MovingAverage.h" />
     <ClInclude Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.h" />

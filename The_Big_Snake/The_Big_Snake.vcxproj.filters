@@ -67,9 +67,6 @@
     <ClCompile Include="src\GameWorld\Map.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
-    <ClCompile Include="src\Physx\MovePlayer.cpp">
-      <Filter>Source Files\Physx</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameWorld\Player.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
@@ -94,6 +91,9 @@
     <ClCompile Include="src\GameWorld\MapBoundaries.cpp">
       <Filter>Source Files\GameWorld</Filter>
     </ClCompile>
+    <ClCompile Include="src\Physx\MoveSnake.cpp">
+      <Filter>Source Files\Physx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -101,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="src\Rendering\Graphics.h">
       <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Physx\MovePlayer.h">
-      <Filter>Header Files\Physx</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\ModelLoader.h">
       <Filter>Header Files\Core</Filter>
@@ -116,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.h">
       <Filter>Header Files\Rendering\CustomAspect</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physx\MoveSnake.h">
+      <Filter>Header Files\Physx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
