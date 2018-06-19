@@ -19,6 +19,7 @@ public:
 	// getters
 	Qt3DCore::QEntity *GetPlayer();
 	QVector3D GetPlayerPosition();
+	float GetPlayerRotation();
 	Qt3DRender::QObjectPicker *GetPlayerSelector();
 
 	//setters

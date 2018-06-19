@@ -40,6 +40,11 @@ QVector3D Player::GetPlayerPosition()
 	return m_transform->translation();
 }
 
+float Player::GetPlayerRotation()
+{
+	return m_transform->rotationY();
+}
+
 Qt3DRender::QObjectPicker * Player::GetPlayerSelector()
 {
 	return m_picker;

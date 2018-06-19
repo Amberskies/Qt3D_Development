@@ -48,8 +48,11 @@ int main(int argc, char *argv[])
 
 	MoveSnake:
 		files setup 
+		borders and border collision added.
+		setup snake movement and the Left/Right key control
+		a totaly diffrent move and controll system.
+		Left Arrow and Right Arrow to turn Snake.
+
 
 	ToDo *****************************************
-	setup snake movement and the Left/Right key control
-	a totaly diffrent move and controll system required.
 	*/
