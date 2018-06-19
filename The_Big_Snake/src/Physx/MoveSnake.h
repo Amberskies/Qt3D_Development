@@ -24,5 +24,7 @@ private:
 	float m_currentRotation = 0.0f;
 	Player *m_snake = nullptr;
 	Qt3DRender::QCamera *m_camera = nullptr;
+	bool m_inhibitRight = false;
+	bool m_inhibitLeft = false;
 };
 

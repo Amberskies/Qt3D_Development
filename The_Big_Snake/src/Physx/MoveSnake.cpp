@@ -18,7 +18,7 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 	m_currentPosition = m_snake->GetPlayerPosition();
 	m_currentRotation = m_snake->GetPlayerRotation();
 
-	if (Input::keyReleased(Qt::Key_Left))
+	if (Input::keyPressed(Qt::Key_Left) && !m_inhibitLeft)
 	{
 		QVector3D axis = { 0.0f, 1.0f, 0.0f };
 		float angle = m_currentRotation + 90.0f;
@@ -33,8 +33,10 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 		else if (m_moveDirection.z() == -1.0f) m_moveDirection = QVector3D(-1.0f, 0.0f, 0.0f);
 		// west = -1, 0, 0
 		else if (m_moveDirection.x() == -1.0f) m_moveDirection = QVector3D(0.0f, 0.0f, 1.0f);
+
+		m_inhibitLeft = true;
 	}
-	else if (Input::keyReleased(Qt::Key_Right))
+	else if (Input::keyPressed(Qt::Key_Right) && !m_inhibitRight)
 	{
 		QVector3D axis = { 0.0f, 1.0f, 0.0f };
 		float angle = m_currentRotation - 90.0f;
@@ -49,8 +51,18 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 		else if (m_moveDirection.z() == -1.0f) m_moveDirection = QVector3D(1.0f, 0.0f, 0.0f);
 		// east = 1, 0, 0
 		else if (m_moveDirection.x() == 1.0f) m_moveDirection = QVector3D(0.0f, 0.0f, 1.0f);
+
+		m_inhibitRight = true;
 	}
 
+	if (Input::keyReleased(Qt::Key_Left))
+	{
+		m_inhibitLeft = false;
+	}
+	if (Input::keyReleased(Qt::Key_Right))
+	{
+		m_inhibitRight = false;
+	}
 	FinalMovement();
 }
 

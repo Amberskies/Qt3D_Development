@@ -59,5 +59,6 @@ int main(int argc, char *argv[])
 
 	ToDo *****************************************
 
-	Seperate game logic out og gfx ? - not sure on this one.
+	
+
 	*/
