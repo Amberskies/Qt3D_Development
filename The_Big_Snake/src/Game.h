@@ -5,9 +5,7 @@
 
 #include "src/Rendering/Window3D.h"
 #include "src/Rendering/Graphics.h"
-
-
-
+#include "GameLogic.h"
 
 class Game : public QObject
 {
@@ -35,8 +33,9 @@ private:
 	/********************************/
 	/*  User Variables              */
 	Window3D & m_window3D;
-	Graphics *m_gfx;
+	Graphics *m_gfx = nullptr;
 	QTimer m_timer;
+	GameLogic *m_gameLogic = nullptr;
 
 	/********************************/
 };

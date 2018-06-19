@@ -53,6 +53,11 @@ int main(int argc, char *argv[])
 		a totaly diffrent move and controll system.
 		Left Arrow and Right Arrow to turn Snake.
 
+	Seperate game logic out of gfx 
+		this will help out when developing furthur.
+		its allways good practice to keep logic and graphics apart.
 
 	ToDo *****************************************
+
+	Seperate game logic out og gfx ? - not sure on this one.
 	*/

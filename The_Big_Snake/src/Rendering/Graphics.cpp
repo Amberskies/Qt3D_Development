@@ -1,14 +1,10 @@
 #include "Graphics.h"
 
-#include "src/Core/Input.h"
-#include <QString>
-#include <QObjectPicker>
 
 
-Graphics::Graphics(Window3D & window3D)
-	: m_wnd(window3D)
-	, m_counter(0)
-	, m_hasNotCollided(true)
+
+Graphics::Graphics()
+
 {
 	// Empty
 }
@@ -21,7 +17,6 @@ Graphics::~Graphics()
 	delete m_mapNorth;
 	delete m_map;
 	delete m_player;
-	delete m_entity;
 	//delete m_fpsEntity; // gets deleted by parent=Window3D
 	//delete m_rootEntity; // gets deleted by parent=Window3D
 }
@@ -43,40 +38,13 @@ void Graphics::InitializeGraphics(Qt3DCore::QEntity * rootEntity)
 
 void Graphics::UpdateGraphics()
 {
-	if (m_hasNotCollided)
-	{
-		m_moveSnake.UpdateMoveSnake(m_player, m_wnd.GetCamera());
-
-		m_counter++;
-		if (m_counter >= 100)
-		{
-			QString f = QString::number((int)m_wnd.GetFps());
-			m_wnd.setTitle("Your FPS =  " + f + "    ");
-			m_counter = 0;
-		}
-
-		if (Input::buttonPressed(Qt::LeftButton))
-		{
-			m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
-		}
-		PickingTest();
-	}
-	m_hasNotCollided = m_moveSnake.checkCollision();
+	//Empty
 }
 
-void Graphics::PickingTest()
+Player * Graphics::GetPlayer()
 {
-	if (m_player->GetPlayerSelector()->containsMouse())
-	{
-		m_player->SetPlayerColor(QColor(Qt::lightGray));
-	}
-	else
-	{
-		m_player->SetPlayerColor(QColor(QRgb(0xDD10EE)));
-	}
+	return m_player;
 }
-
-
 // Notes for textures
 
 ///////////////////////////////////////////////////////////////
