@@ -36,6 +36,8 @@ private:
 	Graphics *m_gfx = nullptr;
 	QTimer m_timer;
 	GameLogic *m_gameLogic = nullptr;
+	// state 0 = startup Screen, 1 = playing, 2 = end Screen
+	int m_gameState = 0;
 
 	/********************************/
 };

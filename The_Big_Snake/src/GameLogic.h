@@ -14,6 +14,9 @@ public:
 	void InititializeGameLogic();
 	void UpdateGameLogic();
 
+	int StartScreen();
+	int GameOver();
+
 
 private:
 	void PickingTest();

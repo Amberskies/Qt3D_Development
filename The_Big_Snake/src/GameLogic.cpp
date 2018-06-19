@@ -2,7 +2,7 @@
 
 #include <QString>
 #include <QObjectPicker>
-#include "src/Core/Input.h"
+
 
 GameLogic::GameLogic(Graphics *gfx, Window3D& window3D)
 	: m_wnd(window3D)
@@ -37,13 +37,19 @@ void GameLogic::UpdateGameLogic()
 			m_counter = 0;
 		}
 
-		if (Input::buttonPressed(Qt::LeftButton))
-		{
-			m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
-		}
 		PickingTest();
 	}
 	m_hasNotCollided = m_moveSnake.checkCollision();
+}
+
+int GameLogic::StartScreen()
+{
+	return 1;
+}
+
+int GameLogic::GameOver()
+{
+	return 2;
 }
 
 void GameLogic::PickingTest()

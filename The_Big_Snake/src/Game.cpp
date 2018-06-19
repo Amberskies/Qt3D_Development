@@ -31,8 +31,23 @@ void Game::MainGameLoop()
 
 	if (m_window3D.isExposed())
 	{
-		UpdateModel();
-		ComposeFrame();
+		if (m_gameState == 0)
+		{
+			m_gameState = m_gameLogic->StartScreen();
+		}
+		else if (m_gameState == 1)
+		{
+			UpdateModel();
+			ComposeFrame();
+		}
+		else if (m_gameState == 2)
+		{
+			m_gameState = m_gameLogic->GameOver();
+		}
+		else
+		{
+			qWarning("m_gameState went out of bounds.");
+		}
 	}
 	
 	m_timer.start(10);
