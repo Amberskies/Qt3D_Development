@@ -8,6 +8,7 @@
 Graphics::Graphics(Window3D & window3D)
 	: m_wnd(window3D)
 	, m_counter(0)
+	, m_hasNotCollided(true)
 {
 	// Empty
 }
@@ -42,21 +43,25 @@ void Graphics::InitializeGraphics(Qt3DCore::QEntity * rootEntity)
 
 void Graphics::UpdateGraphics()
 {
-	m_moveSnake.UpdateMoveSnake();
-
-	m_counter++;
-	if (m_counter >= 100)
+	if (m_hasNotCollided)
 	{
-		QString f = QString::number((int)m_wnd.GetFps());
-		m_wnd.setTitle("Your FPS =  " + f + "    ");
-		m_counter = 0;
-	}
+		m_moveSnake.UpdateMoveSnake(m_player, m_wnd.GetCamera());
 
-	if (Input::buttonPressed(Qt::LeftButton))
-	{
-		m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
+		m_counter++;
+		if (m_counter >= 100)
+		{
+			QString f = QString::number((int)m_wnd.GetFps());
+			m_wnd.setTitle("Your FPS =  " + f + "    ");
+			m_counter = 0;
+		}
+
+		if (Input::buttonPressed(Qt::LeftButton))
+		{
+			m_wnd.SetLightPosition(QVector3D(5.0f, 29.0f, 5.01f));
+		}
+		PickingTest();
 	}
-	PickingTest();
+	m_hasNotCollided = m_moveSnake.checkCollision();
 }
 
 void Graphics::PickingTest()

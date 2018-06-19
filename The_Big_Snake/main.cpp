@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
 
 	Make boundaries for movement.
 
+	MoveSnake:
+		files setup 
 
 	ToDo *****************************************
 	setup snake movement and the Left/Right key control

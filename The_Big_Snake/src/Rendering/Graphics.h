@@ -37,4 +37,5 @@ private:
 	Window3D& m_wnd;
 	MoveSnake m_moveSnake;
 	int m_counter = 0;
+	bool m_hasNotCollided = true;
 };
