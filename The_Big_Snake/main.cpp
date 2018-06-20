@@ -68,6 +68,13 @@ int main(int argc, char *argv[])
 
 	ToDo *****************************************
 
-	
+	check if snake eats itself
+		be aware that you need to skip checking the tail as it moves out of the way.
 
+	Goal : random object placement ie do - random.x, random.y - while(Tile !isEmpty)
+		reaching goal = Grow snake + speed up
+
+		Startup and Game over screens.
+
+	Obsticles ???? - canr see why not - just for fun.
 	*/
