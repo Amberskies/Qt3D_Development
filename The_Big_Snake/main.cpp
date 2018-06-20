@@ -57,6 +57,15 @@ int main(int argc, char *argv[])
 		this will help out when developing furthur.
 		its allways good practice to keep logic and graphics apart.
 
+	MoveSnake :: FinalMove has the test implimented.
+		each segment of the snake has to follow the next segment
+		starting from the tail and working up to the head.
+
+		Player needs to Grow and track direction of movement for each segment.
+		so store position and direction for each segment - then starting from the back
+		each segment takes the movement from the one in front with the player controlling
+		input for the Head. use an array of segments to complete this task.
+
 	ToDo *****************************************
 
 	

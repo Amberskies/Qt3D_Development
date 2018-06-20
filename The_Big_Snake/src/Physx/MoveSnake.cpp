@@ -15,7 +15,7 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 {
 	m_snake = snake;
 	m_camera = camera;
-	m_currentPosition = m_snake->GetPlayerPosition();
+	m_segments[0] = m_snake->GetPlayerPosition();
 	m_currentRotation = m_snake->GetPlayerRotation();
 
 	if (Input::keyPressed(Qt::Key_Left) && !m_inhibitLeft)
@@ -82,7 +82,32 @@ bool MoveSnake::checkCollision()
 
 void MoveSnake::FinalMovement()
 {
-	m_snake->SetPlayerPosition( m_currentPosition + (m_moveDirection * m_moveSpeed));
-	m_camera->translateWorld(m_moveDirection * m_moveSpeed);
-	
+	--m_countdown;
+	// Test ////////////////////////////////
+	if (Input::keyReleased(Qt::Key_Space))
+	{
+		m_currentSegments++;
+		m_snake->Grow(m_currentSegments, m_segments[m_currentSegments - 1]);
+		m_segments[m_currentSegments] = m_segments[m_currentSegments - 1];
+		m_moveSpeed -= 0.2f;
+	}
+	//******///////////////////////////////
+
+
+	if (m_countdown <= 0)
+	{
+		// move segments here
+		int i = m_currentSegments;
+		while (i > 0)
+		{
+			m_snake->SetSegmentPosition(i, m_segments[i - 1]);
+			m_segments[i] = m_segments[i - 1];
+			i--;
+		}
+
+		m_snake->SetPlayerPosition(m_segments[0] + m_moveDirection);
+		m_camera->translateWorld(m_moveDirection);
+
+		m_countdown = m_moveSpeed;
+	}
 }
