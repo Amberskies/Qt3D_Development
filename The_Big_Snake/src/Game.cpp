@@ -33,7 +33,8 @@ void Game::MainGameLoop()
 	{
 		if (m_gameState == 0)
 		{
-			m_gameState = m_gameLogic->StartScreen();
+			//m_gameState = m_gfx->StartScreen();
+			m_gameState = 1;
 		}
 		else if (m_gameState == 1)
 		{
@@ -42,7 +43,7 @@ void Game::MainGameLoop()
 		}
 		else if (m_gameState == 2)
 		{
-			m_gameState = m_gameLogic->GameOver();
+			//m_gameState = m_gfx->GameOver();
 		}
 		else
 		{
@@ -56,7 +57,7 @@ void Game::MainGameLoop()
 void Game::UpdateModel()
 {
 	m_window3D.Update(); // Updates user input to the Window
-	m_gameLogic->UpdateGameLogic();
+	if (m_gameLogic->UpdateGameLogic()) m_gameState = 2;
 }
 
 void Game::ComposeFrame()

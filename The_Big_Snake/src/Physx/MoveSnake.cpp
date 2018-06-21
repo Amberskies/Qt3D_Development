@@ -68,14 +68,24 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 
 bool MoveSnake::checkCollision()
 {
-	bool notCollided = true;
+	// Collisoun with Map boarder.
+	bool collided = false;
 	QVector3D pos = m_snake->GetPlayerPosition();
 	if (pos.x() <= 0.4f ||
 		pos.x() >= 29.6f ||
 		pos.z() <= 0.4f ||
-		pos.z() >= 29.6f) notCollided = false;
+		pos.z() >= 29.6f) collided = true;
 
-	return notCollided;
+	// Collision with yourself
+	QVector3D head = m_snake->GetPlayerPosition();
+	int i = m_currentSegments - 1;
+	while (i > 0)
+	{
+		QVector3D tail = m_snake->GetSegmentPosition(i);
+		if (head == tail) collided = true;
+		i--;
+	}
+	return collided;
 }
 
 ///////////////////////////Private////////////////////////////

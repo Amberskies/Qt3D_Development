@@ -24,6 +24,7 @@ public:
 	QVector3D GetPlayerPosition();
 	float GetPlayerRotation();
 	Qt3DRender::QObjectPicker *GetPlayerSelector();
+	QVector3D GetSegmentPosition(int i);
 
 	//setters
 	void SetPlayerRotaion(QVector3D axis, float angle);

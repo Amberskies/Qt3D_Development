@@ -23,9 +23,9 @@ void GameLogic::InititializeGameLogic()
 
 }
 
-void GameLogic::UpdateGameLogic()
+bool GameLogic::UpdateGameLogic()
 {
-	if (m_hasNotCollided)
+	if (!m_collided)
 	{
 		m_moveSnake.UpdateMoveSnake(m_player, m_wnd.GetCamera());
 
@@ -37,29 +37,22 @@ void GameLogic::UpdateGameLogic()
 			m_counter = 0;
 		}
 
-		PickingTest();
+		//PickingTest(); // highlights snakes head if mouse hovers over
 	}
-	m_hasNotCollided = m_moveSnake.checkCollision();
+	m_collided = m_moveSnake.checkCollision();
+
+	return m_collided;
 }
 
-int GameLogic::StartScreen()
-{
-	return 1;
-}
-
-int GameLogic::GameOver()
-{
-	return 2;
-}
-
-void GameLogic::PickingTest()
-{
-	if (m_player->GetPlayerSelector()->containsMouse())
-	{
-		m_player->SetPlayerColor(QColor(Qt::lightGray));
-	}
-	else
-	{
-		m_player->SetPlayerColor(QColor(QRgb(0xDD10EE)));
-	}
-}
+//
+//void GameLogic::PickingTest()
+//{
+//	if (m_player->GetPlayerSelector()->containsMouse())
+//	{
+//		m_player->SetPlayerColor(QColor(Qt::lightGray));
+//	}
+//	else
+//	{
+//		m_player->SetPlayerColor(QColor(QRgb(0xDD10EE)));
+//	}
+//}

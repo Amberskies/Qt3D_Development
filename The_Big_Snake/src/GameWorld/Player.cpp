@@ -65,6 +65,11 @@ Qt3DRender::QObjectPicker * Player::GetPlayerSelector()
 	return m_picker;
 }
 
+QVector3D Player::GetSegmentPosition(int i)
+{
+	return m_segTransform[i]->translation();
+}
+
 
 void Player::SetPlayerRotaion(QVector3D axis, float angle)
 {

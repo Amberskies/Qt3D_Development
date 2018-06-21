@@ -66,10 +66,10 @@ int main(int argc, char *argv[])
 		each segment takes the movement from the one in front with the player controlling
 		input for the Head. use an array of segments to complete this task.
 
-	ToDo *****************************************
+	MoveSnake:
+		the snake now checks collision with itself.
 
-	check if snake eats itself
-		be aware that you need to skip checking the tail as it moves out of the way.
+	ToDo *****************************************
 
 	Goal : random object placement ie do - random.x, random.y - while(Tile !isEmpty)
 		reaching goal = Grow snake + speed up

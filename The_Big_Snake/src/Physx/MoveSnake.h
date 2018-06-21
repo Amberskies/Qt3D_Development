@@ -28,8 +28,8 @@ private:
 	Qt3DRender::QCamera *m_camera = nullptr;
 	bool m_inhibitRight = false;
 	bool m_inhibitLeft = false;
-	float m_countdown = 15.0f;
-	float m_moveSpeed = 15.0f;
+	float m_countdown = 25.0f;
+	float m_moveSpeed = 25.0f;
 	float m_currentRotation = 0.0f;
 };
 

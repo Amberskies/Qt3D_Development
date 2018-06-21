@@ -12,17 +12,13 @@ public:
 	~GameLogic();
 
 	void InititializeGameLogic();
-	void UpdateGameLogic();
-
-	int StartScreen();
-	int GameOver();
-
+	bool UpdateGameLogic();
 
 private:
-	void PickingTest();
+	//void PickingTest();
 
 	int m_counter = 0;
-	bool m_hasNotCollided = true;
+	bool m_collided = false;
 	MoveSnake m_moveSnake;
 	Player *m_player = nullptr;
 	Graphics *m_gfx = nullptr;;
