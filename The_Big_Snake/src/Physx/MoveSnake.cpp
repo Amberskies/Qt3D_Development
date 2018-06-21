@@ -66,17 +66,17 @@ void MoveSnake::UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera)
 	FinalMovement();
 }
 
-bool MoveSnake::checkCollision()
+bool MoveSnake::checkCollision(QVector3D pos)
 {
-	// Collisoun with Map boarder.
+	// Collision with Map boarder.
 	bool collided = false;
-	QVector3D pos = m_snake->GetPlayerPosition();
+
 	if (pos.x() <= 0.4f ||
 		pos.x() >= 29.6f ||
 		pos.z() <= 0.4f ||
 		pos.z() >= 29.6f) collided = true;
 
-	// Collision with yourself
+	// Collision with snake
 	QVector3D head = m_snake->GetPlayerPosition();
 	int i = m_currentSegments - 1;
 	while (i > 0)
@@ -88,21 +88,19 @@ bool MoveSnake::checkCollision()
 	return collided;
 }
 
+void MoveSnake::GrowSnake()
+{
+	m_currentSegments++;
+	m_snake->Grow(m_currentSegments, m_segments[m_currentSegments - 1]);
+	m_segments[m_currentSegments] = m_segments[m_currentSegments - 1];
+	m_moveSpeed -= 0.2f;
+}
+
 ///////////////////////////Private////////////////////////////
 
 void MoveSnake::FinalMovement()
 {
 	--m_countdown;
-	// Test ////////////////////////////////
-	if (Input::keyReleased(Qt::Key_Space))
-	{
-		m_currentSegments++;
-		m_snake->Grow(m_currentSegments, m_segments[m_currentSegments - 1]);
-		m_segments[m_currentSegments] = m_segments[m_currentSegments - 1];
-		m_moveSpeed -= 0.2f;
-	}
-	//******///////////////////////////////
-
 
 	if (m_countdown <= 0)
 	{

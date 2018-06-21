@@ -23,6 +23,7 @@ Graphics::~Graphics()
 
 void Graphics::InitializeGraphics(Qt3DCore::QEntity * rootEntity)
 {
+	// this is getting to the stage where an Asset Manager will do better.
 	m_rootEntity = rootEntity;
 	m_player = new Player(m_rootEntity);
 	m_map = new Map(m_rootEntity);
@@ -34,16 +35,22 @@ void Graphics::InitializeGraphics(Qt3DCore::QEntity * rootEntity)
 	m_mapWest->CreateWestBoundary();
 	m_mapEast = new MapBoundaries(m_rootEntity);
 	m_mapEast->CreateEastBoundary();
+	m_goal = new Goal(m_rootEntity);
+
 }
 
 void Graphics::UpdateGraphics()
 {
-	//Empty
+	//Empty : The Qt3D engine does this bit.
 }
 
 Player * Graphics::GetPlayer()
 {
 	return m_player;
+}
+Goal * Graphics::GetGoals()
+{
+	return m_goal;
 }
 // Notes for textures
 

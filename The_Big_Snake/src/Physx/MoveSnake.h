@@ -13,7 +13,8 @@ public:
 	~MoveSnake();
 
 	void UpdateMoveSnake(Player *snake, Qt3DRender::QCamera *camera);
-	bool checkCollision();
+	bool checkCollision(QVector3D pos);
+	void GrowSnake();
 
 private:
 	void FinalMovement();

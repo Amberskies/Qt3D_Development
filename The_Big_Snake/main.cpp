@@ -69,10 +69,14 @@ int main(int argc, char *argv[])
 	MoveSnake:
 		the snake now checks collision with itself.
 
-	ToDo *****************************************
+	Dice : added GameRules from Demons_Run 
 
 	Goal : random object placement ie do - random.x, random.y - while(Tile !isEmpty)
 		reaching goal = Grow snake + speed up
+
+	ToDo *****************************************
+
+	
 
 		Startup and Game over screens.
 

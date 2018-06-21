@@ -49,6 +49,12 @@
     <Filter Include="Header Files\Rendering\CustomAspect">
       <UniqueIdentifier>{4a975780-b698-4f8c-9330-4ef730da6fdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameRules">
+      <UniqueIdentifier>{8c925461-8517-42f1-aad5-56cc7bd44ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameRules">
+      <UniqueIdentifier>{ca646d96-abe7-498b-8354-4fc7eb0e4573}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -97,6 +103,12 @@
     <ClCompile Include="src\GameLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameWorld\Goal.cpp">
+      <Filter>Source Files\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameRules\Dice.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h">
@@ -122,6 +134,12 @@
     </ClInclude>
     <ClInclude Include="src\GameLogic.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameWorld\Goal.h">
+      <Filter>Header Files\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameRules\Dice.h">
+      <Filter>Header Files\GameRules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

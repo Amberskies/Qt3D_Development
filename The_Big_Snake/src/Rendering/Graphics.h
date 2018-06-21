@@ -5,6 +5,7 @@
 #include "src/GameWorld/Player.h"
 #include "src/GameWorld/Map.h"
 #include "src/GameWorld/MapBoundaries.h"
+#include "src/GameWorld/Goal.h"
 #include "src/Rendering/Window3D.h"
 
 class Graphics
@@ -20,6 +21,7 @@ public:
 
 	// Gets
 	Player *GetPlayer();
+	Goal *GetGoals();
 	// Sets
 
 private:
@@ -30,4 +32,5 @@ private:
 	MapBoundaries *m_mapNorth = nullptr;
 	MapBoundaries *m_mapEast = nullptr;
 	MapBoundaries *m_mapWest = nullptr;
+	Goal *m_goal = nullptr;
 };
