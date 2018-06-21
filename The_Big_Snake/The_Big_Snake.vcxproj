@@ -116,10 +116,12 @@
     <ClCompile Include="src\Rendering\FPS_Component\MovingAverage.cpp" />
     <ClCompile Include="src\Rendering\FPS_Component\UpdateFpsMonitorsJob.cpp" />
     <ClCompile Include="src\Rendering\Graphics.cpp" />
+    <ClCompile Include="src\Rendering\StartScreen.cpp" />
     <ClCompile Include="src\Rendering\Window3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Input.h" />
+    <ClInclude Include="src\Rendering\StartScreen.h" />
     <QtMoc Include="src\GameWorld\Map.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;.\src;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;.\src\Rendering</IncludePath>

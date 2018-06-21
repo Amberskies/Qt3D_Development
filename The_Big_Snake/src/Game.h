@@ -5,6 +5,7 @@
 
 #include "src/Rendering/Window3D.h"
 #include "src/Rendering/Graphics.h"
+#include "src/Rendering/StartScreen.h"
 #include "GameLogic.h"
 
 class Game : public QObject
@@ -38,6 +39,7 @@ private:
 	GameLogic *m_gameLogic = nullptr;
 	// state 0 = startup Screen, 1 = playing, 2 = end Screen
 	int m_gameState = 0;
+	StartScreen *m_startScreen = nullptr;
 
 	/********************************/
 };

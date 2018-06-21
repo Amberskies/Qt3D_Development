@@ -74,9 +74,9 @@ int main(int argc, char *argv[])
 	Goal : random object placement ie do - random.x, random.y - while(Tile !isEmpty)
 		reaching goal = Grow snake + speed up
 
-	ToDo *****************************************
+	Startup and Game over screens.
 
-		Startup and Game over screens.
-
+	Ideas for improvements *****************************************	
+	show the score  m_score variable is in UpdateLogic.
 	Obsticles ???? - canr see why not - just for fun.
 	*/
