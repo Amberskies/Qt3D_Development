@@ -76,8 +76,6 @@ int main(int argc, char *argv[])
 
 	ToDo *****************************************
 
-	
-
 		Startup and Game over screens.
 
 	Obsticles ???? - canr see why not - just for fun.
