@@ -15,5 +15,6 @@ a little bit of 3D ray casting Object Selection.  So Have fun with this code and
 
 
 
-So There we have it a few ideas on how to use Qt3D in game development
-more projects to come so i'll sse you all later - Have FUN!
+So There we have it a few ideas on how to use Qt3D in game development.
+Head over to https://github.com/Amberskies/Qt3D_The_Amber_Project for new code.
+More projects to come so i'll see you all later - Have FUN!
